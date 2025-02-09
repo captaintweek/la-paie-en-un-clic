@@ -16,17 +16,17 @@
         font-family: Arial, sans-serif;
     }
 
-    /* Grille pour organiser les sous-sections */
-    #subsection-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-        gap: 15px;
-        padding: 20px;
-        max-width: 1200px;
-        margin-top: 80px; /* Augmente la distance sous l'en-tête */
-        margin-left: 100px; /* Augmente la marge à gauche des tableaux */
-        margin-right: 60px; /* Augmente la marge à gauche des tableaux */
-    }
+/* Grille pour organiser les sous-sections */
+#subsection-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    column-gap: 40px; /* Augmente l'espace horizontal entre les tableaux */
+    row-gap: 15px; /* Espace vertical inchangé */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 80px auto; /* Centre le conteneur */
+}
+
 
     /* Style des tableaux */
     .subsection-table {
