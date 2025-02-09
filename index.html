@@ -3,105 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base d'Information Paie</title>
+    <title>Page d'accueil</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            /* Appliquer l'image de fond */
+            background-image: url('images/hokusai.png');
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border: 1px solid #ddd;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .tabs {
+            font-family: Arial, sans-serif;
+            height: 100vh;
             display: flex;
-            border-bottom: 2px solid #333;
+            justify-content: center;
+            align-items: center;
         }
-        .tab {
-            padding: 10px 20px;
+
+        /* Style du bouton */
+        .btn-entrer {
+            background-color: rgba(0, 0, 0, 0.6); /* Fond légèrement transparent pour le bouton */
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 24px;
             cursor: pointer;
-            border-bottom: 2px solid transparent;
+            border-radius: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
         }
-        .tab:hover, .tab.active {
-            border-bottom: 2px solid #333;
-            font-weight: bold;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-            background: #f9f9f9;
+
+        .btn-entrer:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
-    <!-- Contenu protégé -->
-    <div id="protectedContent">
-        <div class="container">
-            <div class="tabs">
-                <a href="accueil.html" class="tab">Accueil</a>
-                <a href="mon-cahier-paie.html" class="tab">Mon Cahier Paie</a>
-                <a href="ccn.html" class="tab">CCN</a>
-                <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
-                <a href="silae.html" class="tab">SILAE</a>
-                <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
-                <a href="contacts.html" class="tab">Contacts</a>
-            </div>
 
-            <div id="accueil" class="tab-content active">
-                <h2>Bienvenue sur ta base d'information paie</h2>
-                <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
-            </div>
+    <!-- Bouton "Entrer sur le site" -->
+    <button class="btn-entrer" onclick="window.location.href='accueil.html';">Entrer sur le site</button>
 
-            <div id="mon-cahier-paie" class="tab-content">
-                <h2>Mon Cahier Paie</h2>
-                <div class="box">Exemples et conseils sur la gestion de la paie.</div>
-            </div>
-
-            <div id="ccn" class="tab-content">
-                <h2>CCN</h2>
-                <div class="box">Informations sur les conventions collectives nationales.</div>
-            </div>
-
-            <div id="calculs-simulateurs" class="tab-content">
-                <h2>Calculs et Simulateurs</h2>
-                <div class="box">Explication sur le calcul du salaire net/brut...</div>
-            </div>
-
-            <div id="silae" class="tab-content">
-                <h2>SILAE</h2>
-                <div class="box">Guide d'utilisation de SILAE pour la gestion de la paie.</div>
-            </div>
-
-            <div id="questions-a-approndir" class="tab-content">
-                <h2>Questions à approfondir</h2>
-                <div class="box">Points à explorer plus en détail.</div>
-            </div>
-
-            <div id="contacts" class="tab-content">
-                <h2>Contacts</h2>
-                <p>Tu peux ici retrouver les informations pour nous contacter :</p>
-                <ul>
-                    <li><strong>Email :</strong> support@mesinfospaie.com</li>
-                    <li><strong>Téléphone :</strong> 01 23 45 67 89</li>
-                    <li><strong>Adresse :</strong> 123 Rue de la Paie, 75000 Paris</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
