@@ -6,7 +6,6 @@
     <title>Page d'accueil</title>
     <style>
         body {
-            /* Appliquer l'image de fond */
             background-image: url('images/1.hokusai.png');
             background-size: cover;
             background-position: center;
@@ -17,11 +16,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            text-align: center;
         }
 
-        /* Style du bouton */
+        .welcome-text {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
         .btn-entrer {
-            background-color: rgba(0, 0, 0, 0.6); /* Fond légèrement transparent pour le bouton */
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 20px 40px;
@@ -30,17 +37,59 @@
             border-radius: 10px;
             text-align: center;
             transition: background-color 0.3s;
+            margin-top: 20px;
         }
 
         .btn-entrer:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        .error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            width: 200px;
+        }
     </style>
 </head>
 <body>
 
+    <div class="welcome-text">Bienvenue sur notre site !</div>
+
+    <!-- Zone de saisie pour le mot de passe -->
+    <input type="password" id="password" placeholder="Entrez le mot de passe">
+
+    <!-- Message d'erreur (invisible au début) -->
+    <div id="error-message" class="error-message" style="display: none;">Mot de passe erroné, demander à la grosse dame.</div>
+
     <!-- Bouton "Entrer sur le site" -->
-    <button class="btn-entrer" onclick="window.location.href='accueil.html';">Entrer sur le site</button>
+    <button class="btn-entrer" onclick="verifierMotDePasse()">Entrer sur le site</button>
+
+    <script>
+        // Mot de passe correct
+        const motDePasseCorrect = "votreMotDePasse"; // Remplacez "votreMotDePasse" par le mot de passe souhaité
+
+        function verifierMotDePasse() {
+            const motDePasseSaisi = document.getElementById('password').value;
+            const messageErreur = document.getElementById('error-message');
+
+            if (motDePasseSaisi === motDePasseCorrect) {
+                // Si le mot de passe est correct, on redirige vers la page d'accueil
+                window.location.href = 'accueil.html';
+            } else {
+                // Si le mot de passe est incorrect, on affiche le message d'erreur
+                messageErreur.style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
