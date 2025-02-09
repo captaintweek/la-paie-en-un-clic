@@ -1,8 +1,8 @@
 <div id="menu-container"></div>
 
-<!-- Section pour les boutons des sous-sections -->
+<!-- Conteneur des sous-sections -->
 <div id="subsection-container">
-    <!-- Les cartes des sous-sections seront insérées ici par JavaScript -->
+    <!-- Les tableaux seront insérés ici par JavaScript -->
 </div>
 
 <!-- Style CSS -->
@@ -15,7 +15,7 @@
         font-family: Arial, sans-serif;
     }
 
-    /* Conteneur des sous-sections en grille */
+    /* Grille pour organiser les sous-sections */
     #subsection-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
@@ -25,32 +25,45 @@
         margin: auto;
     }
 
-    /* Style des cartes */
-    .subsection-card {
+    /* Style des tableaux */
+    .subsection-table {
+        width: 100%;
+        border-collapse: collapse;
         background-color: white;
         border-radius: 8px;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
+        overflow: hidden;
+    }
+
+    /* Style des cellules */
+    .subsection-table td {
+        padding: 15px;
         text-align: center;
-        font-size: 16px;
+        border: 1px solid #ddd;
+    }
+
+    /* Lien hypertexte des sous-sections */
+    .subsection-title a {
+        text-decoration: none;
+        color: #333;
         font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+        display: block;
+        padding: 10px;
     }
 
     /* Effet au survol */
-    .subsection-card:hover {
-        background-color: #f0f0f0;
-        transform: scale(1.05);
+    .subsection-title a:hover {
+        color: #d63384; /* Fuchsia */
     }
 
-    /* Responsive pour mobile */
+    /* Responsive pour tablette */
     @media (max-width: 1024px) {
         #subsection-container {
             grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
         }
     }
 
+    /* Responsive pour mobile */
     @media (max-width: 600px) {
         #subsection-container {
             grid-template-columns: repeat(1, 1fr); /* 1 colonne sur mobile */
@@ -60,7 +73,7 @@
 
 <!-- Scripts JavaScript -->
 <script>
-    // Charger le menu depuis un fichier HTML externe
+    // Charger le menu depuis un fichier externe
     fetch("en-tete/menu.html")
     .then(response => response.text())
     .then(data => document.getElementById("menu-container").innerHTML = data);
@@ -69,7 +82,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const sections = [
             { title: "SMIC, PMSS et autres données utiles", link: "smic-pmss.html" },
-            { title: "Elements du brut", link: "elements-du-brut.html" },
+            { title: "Éléments du brut", link: "elements-du-brut.html" },
             { title: "Cotisations sociales, retraite, mutuelle", link: "cotisations.html" },
             { title: "Taxes, impôts et autres cotisations", link: "taxes-impots.html" },
             { title: "Salariés en situations particulières", link: "salaires-situations-particulieres.html" },
@@ -84,13 +97,31 @@
 
         const container = document.getElementById("subsection-container");
 
-        // Générer les cartes de sous-sections
+        // Générer les tableaux des sous-sections
         sections.forEach(section => {
-            const card = document.createElement("div");
-            card.classList.add("subsection-card");
-            card.textContent = section.title;
-            card.onclick = () => window.location.href = section.link; // Redirige vers la sous-section
-            container.appendChild(card);
+            const table = document.createElement("table");
+            table.classList.add("subsection-table");
+
+            // 1ère ligne : Titre de la sous-section
+            const titleRow = document.createElement("tr");
+            const titleCell = document.createElement("td");
+            titleCell.classList.add("subsection-title");
+            titleCell.innerHTML = `<a href="${section.link}">${section.title}</a>`;
+            titleRow.appendChild(titleCell);
+
+            // 2ème ligne : Sous-sous-sections (vide pour l’instant)
+            const subRow = document.createElement("tr");
+            const subCell = document.createElement("td");
+            subCell.classList.add("subsection-content");
+            subCell.textContent = ""; // Vide pour le moment
+            subRow.appendChild(subCell);
+
+            // Ajouter les lignes au tableau
+            table.appendChild(titleRow);
+            table.appendChild(subRow);
+
+            // Ajouter le tableau au conteneur
+            container.appendChild(table);
         });
     });
 </script>
