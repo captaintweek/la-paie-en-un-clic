@@ -1,11 +1,72 @@
 <div id="menu-container"></div>
 
+<!-- Section des tableaux -->
+<div class="data-container">
+    <!-- TABLEAU 1 : DONNEES EN VIGUEUR -->
+    <table class="data-table">
+        <tr><th colspan="2">Depuis le 1er novembre 2024 et<br> au 1er janvier 2025</th></tr>
+        <tr><td><strong>PMSS</strong></td><td>3 925 €</td></tr>
+        <tr><td><strong>SMIC horaire</strong></td><td>11,88 €</td></tr>
+        <tr><td><strong>SMIC mensuel</strong></td><td>1 801,80 €</td></tr>
+        <tr><td><strong>Minimum garanti</strong></td><td>4,22 €</td></tr>
+        <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,26 €</td></tr>
+    </table>
+
+    <!-- TABLEAU 2 : DONNEES N-1 -->
+    <table class="data-table">
+        <tr><th colspan="2">Données 2024 (de janvier à octobre)</th></tr>
+        <tr><td><strong>PMSS</strong></td><td>3 864 €</td></tr>
+        <tr><td><strong>SMIC horaire</strong></td><td>11,65 €</td></tr>
+        <tr><td><strong>SMIC mensuel</strong></td><td>1 766,96 €</td></tr>
+        <tr><td><strong>Minimum garanti</strong></td><td>4,15 €</td></tr>
+        <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,18 €</td></tr>
+    </table>
+</div>
+
 <style>
     body {
         background-image: url('images/1.dorures.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    /* Style de base pour les tableaux */
+    .data-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .data-table {
+        width: 38%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .data-table th, .data-table td {
+        border: 2px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .data-table th {
+        background-color: #f4f4f4;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .data-table th[colspan] {
+        white-space: normal;
+    }
+
+    .data-table td:first-child {
+        width: 35%;
+    }
+
+    .data-table td:nth-child(2) {
+        width: 20%;
     }
 </style>
 
