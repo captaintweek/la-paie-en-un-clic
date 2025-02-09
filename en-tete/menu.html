@@ -1,3 +1,35 @@
+<style>
+    /* Style pour les boutons alignés horizontalement et couleur rose foncé */
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    /* Style des boutons */
+    .button-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #D5006D; /* Fuchsia */
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 150px;
+        margin: 0 5px; /* Espacement entre les boutons */
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        flex-direction: column; /* Pour empiler le texte et l'image */
+    }
+
+    .button-container a:hover {
+        background-color: #9C005C; /* Teinte plus foncée pour le survol */
+    }
+</style>
+
+<!-- Menu avec boutons fuchsia -->
 <div class="button-container">
     <a href="accueil.html" class="tab active">Accueil</a>
     <a href="mon-cahier-paie.html" class="tab">Mon Cahier Paie</a>
@@ -5,5 +37,5 @@
     <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
     <a href="silae.html" class="tab">SILAE</a>
     <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
-    <a href="contacts.html" class="tab">Contacts</a> <!-- Ajout de Contacts dans le menu -->
+    <a href="contacts.html" class="tab">Contacts</a>
 </div>
