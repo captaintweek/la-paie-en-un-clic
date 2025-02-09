@@ -51,20 +51,3 @@ body {
     min-height: 100vh;
 }
 
-/* Style for the "Retour à l'accueil" link */
-.accueil-link {
-    position: absolute; /* Absolu pour se positionner en bas du menu */
-    bottom: 20px; /* Espacement de 20px du bas du menu */
-    left: 0; /* Aligné à gauche */
-    width: 100%; /* Garde la largeur du menu */
-    text-align: center; /* Centrer le texte */
-    padding: 10px 0;
-    background-color: #f4f4f4;
-    color: #333;
-    text-decoration: none;
-}
-
-.accueil-link:hover {
-    background-color: #ddd;
-    color: #009999;
-}
