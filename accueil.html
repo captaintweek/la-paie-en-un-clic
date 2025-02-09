@@ -31,9 +31,16 @@
         .data-table th {
             background-color: #f4f4f4;
             text-align: center;
+            white-space: nowrap;
+        }
+        .data-table th[colspan] {
+            white-space: normal;
         }
         .data-table td:first-child {
             width: 35%;
+        }
+        .data-table td:nth-child(2) {
+            width: 20%;
         }
     </style>
 
@@ -50,7 +57,6 @@
             <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
         </div>
 
-
 <!-- Contenu de la page d'accueil -->
         
         <h2>Données paie </h2>
@@ -58,7 +64,7 @@
             
             <!-- TABLEAU 1 : DONNEES EN VIGUEUR -->
             <table class="data-table">
-                <tr><th colspan="2">Depuis le 1er novembre 2024 et au 1er janvier 2025</th></tr>
+                <tr><th colspan="2">Depuis le 1er novembre 2024 et<br> au 1er janvier 2025</th></tr>
                 <tr><td><strong>PMSS</strong></td><td>3 925 €</td></tr>
                 <tr><td><strong>SMIC horaire</strong></td><td>11,88 €</td></tr>
                 <tr><td><strong>SMIC mensuel</strong></td><td>1 801,80 €</td></tr>
@@ -73,7 +79,7 @@
                 <tr><td><strong>SMIC horaire</strong></td><td>11,65 €</td></tr>
                 <tr><td><strong>SMIC mensuel</strong></td><td>1 766,96 €</td></tr>
                 <tr><td><strong>Minimum garanti</strong></td><td>4,15 €</td></tr>
-                <tr><td><strong>Valeur tickets restaurant</strong></td><td>7.18 €</td></tr>
+                <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,18 €</td></tr>
             </table>
         </div>
     </div>
