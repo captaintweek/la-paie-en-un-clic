@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -173,3 +174,180 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base d'Information Paie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            display: flex;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #333;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab:hover, .tab.active {
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 15px;
+            border-right: 2px solid #ddd;
+            background-color: #f4f4f4;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sidebar a:hover {
+            font-weight: bold;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Mon Cahier Paie</h3>
+            <ul>
+                <li><a href="#smic-pmss">SMIC, PMSS et autres données utiles</a></li>
+                <li><a href="#elements-du-brut">Les éléments du brut et les indemnités</a></li>
+                <li><a href="#cotisations-sociales">Les cotisations de sécurité sociale, de retraite, prévoyance, mutuelle et retraite supplémentaire</a></li>
+                <li><a href="#taxes-impots">Taxes, impôts et autres cotisations</a></li>
+                <li><a href="#salariés-en-situation-particulière">Les salariés en situations particulières et les non salariés</a></li>
+                <li><a href="#parametrage-dsn">Le paramétrage DSN</a></li>
+                <li><a href="#effectifs">Les effectifs</a></li>
+                <li><a href="#echeances-declarations">Les échéances et déclarations</a></li>
+                <li><a href="#procedures-sauvegarde">Les procédures sauvegarde, RJ et liquidation</a></li>
+                <li><a href="#embauche-du-salarie">L'embauche du salarié</a></li>
+                <li><a href="#sortie-du-salarie">La sortie du salarié</a></li>
+                <li><a href="#audits-et-controles">Les audits et contrôles</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="tabs">
+                <a href="accueil.html" class="tab">Accueil</a>
+                <a href="mon-cahier-paie.html" class="tab active">Mon Cahier Paie</a>
+                <a href="ccn.html" class="tab">CCN</a>
+                <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
+                <a href="silae.html" class="tab">SILAE</a>
+                <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
+                <a href="contacts.html" class="tab">Contacts</a>
+            </div>
+
+            <div id="smic-pmss" class="tab-content">
+                <h2>SMIC, PMSS et autres données utiles</h2>
+                <div class="box">Informations essentielles sur le SMIC, PMSS et d'autres données utiles en gestion de la paie.</div>
+            </div>
+
+            <div id="elements-du-brut" class="tab-content">
+                <h2>Les éléments du brut et les indemnités</h2>
+                <div class="box">Détails sur le calcul du brut et des indemnités liées au salaire.</div>
+            </div>
+
+            <div id="cotisations-sociales" class="tab-content">
+                <h2>Les cotisations de sécurité sociale, de retraite, prévoyance, mutuelle et retraite supplémentaire</h2>
+                <div class="box">Informations sur les cotisations à différents niveaux de sécurité sociale et retraite.</div>
+            </div>
+
+            <div id="taxes-impots" class="tab-content">
+                <h2>Taxes, impôts et autres cotisations</h2>
+                <div class="box">Les différentes taxes et cotisations applicables sur la paie.</div>
+            </div>
+
+            <div id="salariés-en-situation-particulière" class="tab-content">
+                <h2>Les salariés en situations particulières et les non salariés</h2>
+                <div class="box">Gestion des salariés en situations particulières (handicap, CDD, intérimaires) et des non salariés.</div>
+            </div>
+
+            <div id="parametrage-dsn" class="tab-content">
+                <h2>Le paramétrage DSN</h2>
+                <div class="box">Comment paramétrer la DSN dans le système de paie.</div>
+            </div>
+
+            <div id="effectifs" class="tab-content">
+                <h2>Les effectifs</h2>
+                <div class="box">Gestion et suivi des effectifs des salariés.</div>
+            </div>
+
+            <div id="echeances-declarations" class="tab-content">
+                <h2>Les échéances et déclarations</h2>
+                <div class="box">Les différentes échéances fiscales et les déclarations sociales liées à la paie.</div>
+            </div>
+
+            <div id="procedures-sauvegarde" class="tab-content">
+                <h2>Les procédures sauvegarde, RJ et liquidation</h2>
+                <div class="box">Détails sur les procédures légales liées à la sauvegarde, la liquidation et le RJ.</div>
+            </div>
+
+            <div id="embauche-du-salarie" class="tab-content">
+                <h2>L'embauche du salarié</h2>
+                <div class="box">Procédure d'embauche du salarié, documents nécessaires, déclarations sociales.</div>
+            </div>
+
+            <div id="sortie-du-salarie" class="tab-content">
+                <h2>La sortie du salarié</h2>
+                <div class="box">Processus de départ d'un salarié : rupture de contrat, calcul des indemnités de départ.</div>
+            </div>
+
+            <div id="audits-et-controles" class="tab-content">
+                <h2>Les audits et contrôles</h2>
+                <div class="box">Préparation aux audits sociaux, contrôles URSSAF et autres inspections.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(event, tabId) {
+            let tabs = document.querySelectorAll('.tab-content');
+            let tabButtons = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+>>>>>>> c3a8f44b1414f68ea127c0ac56e4c3ce9c504ee0

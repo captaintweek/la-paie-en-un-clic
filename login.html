@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,3 +47,53 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        .login-form {
+            display: block;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-form input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container" class="login-form">
+        <h2>Connexion</h2>
+        <input type="password" id="password" placeholder="Mot de passe" />
+        <button onclick="checkPassword()">Se connecter</button>
+        <p id="error-message" style="color: red; display: none;">Mot de passe incorrect</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "Yuna56400"; // Remplace ça par ton propre mot de passe
+            
+            if(password === correctPassword) {
+                window.location.href = "index.html"; // Redirige vers la page d'accueil après une connexion réussie
+            } else {
+                document.getElementById("error-message").style.display = "block"; // Affiche le message d'erreur si le mot de passe est incorrect
+            }
+        }
+    </script>
+</body>
+</html>
+>>>>>>> c3a8f44b1414f68ea127c0ac56e4c3ce9c504ee0
