@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    
+
 <!-- en-tête avec menu principal -->
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-
+        /* Style de base pour la page */
         .data-container {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
-            width: 100%;
         }
 
         .data-table {
@@ -51,30 +50,33 @@
             width: 20%;
         }
 
-        .buttons-container {
+        /* Style pour les boutons alignés horizontalement et couleur rose foncé */
+        .button-container {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-left: 20px;
+            justify-content: space-between;
+            margin-top: 30px;
         }
 
-        .btn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+        .button-container a {
+            background-color: #D5006D; /* Fuchsia */
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
+            padding: 10px 20px;
             text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+            margin: 0 5px; /* Espacement entre les boutons */
+            display: inline-block;
+            text-transform: uppercase;
         }
 
-        .btn:hover {
-            background-color: #45a049;
+        .button-container a:hover {
+            background-color: #9C005C; /* Teinte plus foncée pour le survol */
         }
 
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="tabs">
@@ -84,11 +86,11 @@
             <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
             <a href="silae.html" class="tab">SILAE</a>
             <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
-            <a href="contacts.html" class="tab">Contacts</a> <!-- Nouveau lien -->
+            <a href="contacts.html" class="tab">Contacts</a> <!-- Ajout de Contacts dans le menu -->
         </div>
 
         <!-- Contenu de la page d'accueil -->
-        <h2>Données paie </h2>
+        <h2>Données paie</h2>
         <div class="data-container">
             
             <!-- TABLEAU 1 : DONNEES EN VIGUEUR -->
@@ -112,16 +114,15 @@
             </table>
         </div>
 
-        <!-- Ajouter les boutons à droite -->
-        <div class="buttons-container">
-            <a href="mon-cahier-paie.html"><button class="btn">Mon Cahier Paie</button></a>
-            <a href="contacts.html"><button class="btn">Contacts</button></a>
-            <a href="ccn.html"><button class="btn">CCN</button></a>
-            <a href="calculs-simulateurs.html"><button class="btn">Calculs et Simulateurs</button></a>
-            <a href="silae.html"><button class="btn">SILAE</button></a>
-            <a href="questions-a-approndir.html"><button class="btn">Questions à approfondir</button></a>
+        <!-- Boutons dans la zone libre à droite -->
+        <div class="button-container">
+            <a href="mon-cahier-paie.html">Mon Cahier Paie</a>
+            <a href="contacts.html">Contacts</a>
+            <a href="ccn.html">CCN</a>
+            <a href="calculs-simulateurs.html">Calculs et Simulateurs</a>
+            <a href="silae.html">SILAE</a>
+            <a href="questions-a-approndir.html">Questions à approfondir</a>
         </div>
-
     </div>
 </body>
 </html>
