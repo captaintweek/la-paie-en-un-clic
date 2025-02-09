@@ -1,8 +1,8 @@
 <div id="menu-container"></div>
 
 <!-- Section pour les boutons des sous-sections -->
-<div id="subsection-buttons-container">
-  <!-- Les boutons seront insérés ici par JavaScript -->
+<div id="subsection-container">
+    <!-- Les cartes des sous-sections seront insérées ici par JavaScript -->
 </div>
 
 <!-- Style CSS -->
@@ -12,28 +12,49 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
     }
 
-    #subsection-buttons-container {
-        margin-top: 20px;
-        padding-left: 20px;
+    /* Conteneur des sous-sections en grille */
+    #subsection-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+        gap: 15px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
     }
 
-    #subsection-buttons-container button {
-        background-color: #f0f0f0;
-        color: #333;
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 5px;
-        width: 100%;
-        text-align: left;
+    /* Style des cartes */
+    .subsection-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
         font-size: 16px;
+        font-weight: bold;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: transform 0.2s ease-in-out, background-color 0.3s ease;
     }
 
-    #subsection-buttons-container button:hover {
-        background-color: #e0e0e0;
+    /* Effet au survol */
+    .subsection-card:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.05);
+    }
+
+    /* Responsive pour mobile */
+    @media (max-width: 1024px) {
+        #subsection-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+        }
+    }
+
+    @media (max-width: 600px) {
+        #subsection-container {
+            grid-template-columns: repeat(1, 1fr); /* 1 colonne sur mobile */
+        }
     }
 </style>
 
@@ -49,26 +70,27 @@
         const sections = [
             { title: "SMIC, PMSS et autres données utiles", link: "smic-pmss.html" },
             { title: "Elements du brut", link: "elements-du-brut.html" },
-            { title: "Les cotisations de sécurité sociale, retraite, prévoyance, mutuelle", link: "cotisations.html" },
+            { title: "Cotisations sociales, retraite, mutuelle", link: "cotisations.html" },
             { title: "Taxes, impôts et autres cotisations", link: "taxes-impots.html" },
-            { title: "Les salariés en situations particulières et les non salariés", link: "salaires-situations-particulières.html" },
-            { title: "Le paramétrage DSN", link: "parametrage-dsn.html" },
-            { title: "Les effectifs", link: "effectifs.html" },
-            { title: "Les échéances et déclarations", link: "echeances-declarations.html" },
-            { title: "Les procédures sauvegarde, RJ et liquidation", link: "procedures-sauvegarde.html" },
-            { title: "L'embauche du salarié", link: "embauche-salarie.html" },
-            { title: "La sortie du salarié", link: "sortie-salarie.html" },
-            { title: "Les audits et contrôles", link: "audits-controles.html" }
+            { title: "Salariés en situations particulières", link: "salaires-situations-particulieres.html" },
+            { title: "Paramétrage DSN", link: "parametrage-dsn.html" },
+            { title: "Effectifs", link: "effectifs.html" },
+            { title: "Échéances et déclarations", link: "echeances-declarations.html" },
+            { title: "Procédures sauvegarde, RJ, liquidation", link: "procedures-sauvegarde.html" },
+            { title: "Embauche du salarié", link: "embauche-salarie.html" },
+            { title: "Sortie du salarié", link: "sortie-salarie.html" },
+            { title: "Audits et contrôles", link: "audits-controles.html" }
         ];
 
-        const container = document.getElementById("subsection-buttons-container");
+        const container = document.getElementById("subsection-container");
 
-        // Créer un bouton pour chaque section
+        // Générer les cartes de sous-sections
         sections.forEach(section => {
-            const button = document.createElement("button");
-            button.textContent = section.title;
-            button.onclick = () => window.location.href = section.link; // Redirige vers la sous-section correspondante
-            container.appendChild(button);
+            const card = document.createElement("div");
+            card.classList.add("subsection-card");
+            card.textContent = section.title;
+            card.onclick = () => window.location.href = section.link; // Redirige vers la sous-section
+            container.appendChild(card);
         });
     });
 </script>
