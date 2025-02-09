@@ -182,6 +182,31 @@
             event.currentTarget.classList.add('active');
         }
     </script>
+
+#subsection-buttons-container {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#subsection-buttons-container button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#subsection-buttons-container button:hover {
+    background-color: #e0e0e0;
+}
+
+            
+            
 </body>
 </html>
 >>>>>>> c3a8f44b1414f68ea127c0ac56e4c3ce9c504ee0
