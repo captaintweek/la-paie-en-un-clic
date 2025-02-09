@@ -103,18 +103,18 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Style pour positionner uniquement le lien "Accueil" en bas */
+/* Style pour positionner uniquement le lien "Accueil" en bas du menu */
 .accueil-link {
-    position: fixed; /* Utilisation de fixed pour qu'il reste visible en bas */
+    position: absolute; /* Positionner le lien en bas du menu */
     bottom: 20px; /* Espacement de 20px par rapport au bas */
-    left: 0;
-    width: 100%;
-    text-align: center;
+    left: 0; /* Aligner avec le bord gauche du menu */
+    width: 100%; /* La largeur du lien prendra toute la largeur du menu */
+    text-align: center; /* Centrer le texte à l'intérieur */
     padding: 10px 0;
     background-color: #f4f4f4;
     color: #333;
     text-decoration: none;
-    z-index: 9999; /* Pour qu'il reste au-dessus de tout autre élément */
+    z-index: 9999; /* Pour s'assurer qu'il reste au-dessus du contenu */
 }
 
 .accueil-link:hover {
