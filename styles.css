@@ -8,16 +8,16 @@ body {
 
 /* Menu container */
 .menu-container {
-    position: fixed; /* Laisser la position fixe pour le menu */
+    position: fixed; /* Garder le menu fixe à gauche */
     top: 0;
     left: 0;
-    width: 300px; /* Ajustement à 300px */
+    width: 300px; /* Largeur du menu */
     background-color: #f4f4f4;
     height: 100%;
     padding-top: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Ajout du scroll si le menu est long */
-    z-index: 10; /* S'assurer que le menu reste au-dessus du contenu */
+    overflow-y: auto; /* Ajouter un défilement si nécessaire */
+    z-index: 10;
 }
 
 /* Style for the menu list */
@@ -43,78 +43,25 @@ body {
 /* Content container */
 .content-container {
     position: relative;
-    margin-left: 320px; /* Ajusté pour correspondre à la largeur du menu */
-    padding: 40px; /* Augmenter l'espace autour du texte */
-    max-width: calc(100% - 340px); /* S'assurer que le contenu reste bien aligné */
-    background: white; /* Assurer un bon contraste */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre */
-    min-height: 100vh; /* Assurer que le contenu prend toute la hauteur */
+    margin-left: 320px; /* Décalage pour le menu */
+    padding: 40px;
+    max-width: calc(100% - 340px);
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
 }
 
-/* Correction du titre trop à gauche */
-.content-container h1 {
-    margin-left: 10px;
-}
-
-/* Navigation Buttons (Previous/Next) */
-.navigation {
-    position: fixed;
-    bottom: 20px;
-    left: 320px; /* Alignement avec le contenu */
-    right: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-button {
-    background-color: #009999;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.nav-button:hover {
-    background-color: #007f7f;
-}
-
-/* Styling for subsection buttons */
-#subsection-buttons-container {
-    margin-top: 20px;
-    padding-left: 20px;
-}
-
-#subsection-buttons-container button {
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px;
-    width: 100%;
-    text-align: left;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#subsection-buttons-container button:hover {
-    background-color: #e0e0e0;
-}
-
-/* Style pour positionner uniquement le lien "Accueil" en bas du menu */
+/* Style for the "Retour à l'accueil" link */
 .accueil-link {
-    position: absolute; /* Positionner le lien en bas du menu */
-    bottom: 20px; /* Espacement de 20px par rapport au bas */
-    left: 0; /* Aligner avec le bord gauche du menu */
-    width: 100%; /* La largeur du lien prendra toute la largeur du menu */
-    text-align: center; /* Centrer le texte à l'intérieur */
+    position: absolute; /* Absolu pour se positionner en bas du menu */
+    bottom: 20px; /* Espacement de 20px du bas du menu */
+    left: 0; /* Aligné à gauche */
+    width: 100%; /* Garde la largeur du menu */
+    text-align: center; /* Centrer le texte */
     padding: 10px 0;
     background-color: #f4f4f4;
     color: #333;
     text-decoration: none;
-    z-index: 9999; /* Pour s'assurer qu'il reste au-dessus du contenu */
 }
 
 .accueil-link:hover {
