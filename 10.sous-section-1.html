@@ -3,38 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sous-sections - Mon Cahier Paie</title>
+    <title>Base d'Information Paie</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Menu fixe à gauche -->
+    <!-- Menu Fixe à Gauche -->
     <div class="menu-container">
-        <div class="menu">
-            <ul>
-                <li><a href="#" class="menu-item">Sous-section 1</a></li>
-                <li><a href="#" class="menu-item">Sous-section 2</a></li>
-                <li><a href="#" class="menu-item">Sous-section 3</a></li>
-                <!-- Ajouter d'autres sous-sections ici -->
-            </ul>
-        </div>
+        <ul class="menu">
+            <li><a href="#" class="menu-item" onclick="openTab(event, 'accueil')">Accueil</a></li>
+            <li><a href="#" class="menu-item" onclick="openTab(event, 'calculs')">Calculs & Simulateurs</a></li>
+            <li><a href="#" class="menu-item" onclick="openTab(event, 'ressources')">Ressources</a></li>
+            <li><a href="#" class="menu-item" onclick="openTab(event, 'notes')">Notes</a></li>
+        </ul>
     </div>
 
-    <!-- Contenu principal à droite -->
+    <!-- Contenu Principal (Déplacé à droite) -->
     <div class="content-container">
-        <div class="content">
-            <!-- Le contenu des sous-sections se chargera ici dynamiquement -->
-            <h1>Bienvenue dans la Sous-section 1</h1>
-            <p>Voici le contenu de la première sous-section.</p>
+        <div id="accueil" class="tab-content active">
+            <h2>Bienvenue sur ta base d'information paie</h2>
+            <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
+        </div>
+
+        <div id="calculs" class="tab-content">
+            <h2>Calculs & Simulateurs</h2>
+            <div class="box">Explication sur le calcul du salaire net/brut...</div>
+        </div>
+
+        <div id="ressources" class="tab-content">
+            <h2>Ressources</h2>
+            <div class="box">Liens vers les textes de loi et conventions collectives.</div>
+        </div>
+
+        <div id="notes" class="tab-content">
+            <h2>Notes personnelles</h2>
+            <div class="box">Espace pour tes propres observations.</div>
+        </div>
+
+        <!-- Navigation Précédent/Suivant -->
+        <div class="navigation">
+            <button class="nav-button" onclick="navigate('previous')">Précédent</button>
+            <button class="nav-button" onclick="navigate('next')">Suivant</button>
         </div>
     </div>
 
-    <!-- Navigation : Flèches pour passer à la page précédente/suivante -->
-    <div class="navigation">
-        <button class="nav-button" id="prevBtn">← Précédent</button>
-        <button class="nav-button" id="nextBtn">Suivant →</button>
-    </div>
+    <script>
+        // Fonction pour ouvrir les onglets (tab)
+        function openTab(event, tabId) {
+            let tabs = document.querySelectorAll('.tab-content');
+            let tabButtons = document.querySelectorAll('.menu-item');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
 
-    <script src="script.js"></script>
+        // Navigation Précédent/Suivant
+        function navigate(direction) {
+            let activeTab = document.querySelector('.tab-content.active');
+            let allTabs = document.querySelectorAll('.tab-content');
+            let currentIndex = Array.from(allTabs).indexOf(activeTab);
+
+            if (direction === 'previous' && currentIndex > 0) {
+                openTab({ currentTarget: document.querySelectorAll('.menu-item')[currentIndex - 1] }, allTabs[currentIndex - 1].id);
+            } else if (direction === 'next' && currentIndex < allTabs.length - 1) {
+                openTab({ currentTarget: document.querySelectorAll('.menu-item')[currentIndex + 1] }, allTabs[currentIndex + 1].id);
+            }
+        }
+    </script>
 </body>
 </html>
