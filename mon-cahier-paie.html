@@ -5,7 +5,6 @@
     <!-- Les tableaux seront insérés ici par JavaScript -->
 </div>
 
-
 <!-- Style CSS -->
 <style>
     body {
@@ -16,18 +15,16 @@
         font-family: Arial, sans-serif;
     }
 
-/* Grille pour organiser les sous-sections */
-#subsection-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-    column-gap: 30px; /* Augmente l'espace horizontal entre les tableaux */
-    row-gap: 15px; /* Espace vertical inchangé */
-    padding: 20px;
-    max-width: 1600px;
-    margin: 20px auto; /* Réduit l'espace au-dessus des tableaux */
-    
-}
-
+    /* Grille pour organiser les sous-sections */
+    #subsection-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+        column-gap: 30px; /* Augmente l'espace horizontal entre les tableaux */
+        row-gap: 15px; /* Espace vertical inchangé */
+        padding: 20px;
+        max-width: 1600px;
+        margin: 20px auto; /* Réduit l'espace au-dessus des tableaux */
+    }
 
     /* Style des tableaux */
     .subsection-table {
@@ -39,7 +36,7 @@
         overflow: hidden;
         width: 100%; /* Ajuste la largeur selon tes besoins */
         max-width: 350px; /* Empêche que les tableaux deviennent trop larges sur les grands écrans */
-}
+    }
 
     /* Style des cellules */
     .subsection-table td {
@@ -48,15 +45,21 @@
         border: 1px solid #ddd;
     }
 
-/* Hauteur réduite pour la première ligne des tableaux (titres des sous-sections) */
-.subsection-table tr:first-child td {
-    padding: 5px 15px; /* Réduit l'espace interne (haut et bas) des cellules */
-    height: 40px; /* Ajuste la hauteur spécifique de la ligne */
-    font-size: 14px; /* Optionnel : Ajuste la taille du texte si nécessaire */
-}
+    /* Hauteur réduite pour la première ligne des tableaux (titres des sous-sections) */
+    .subsection-table tr:first-child td {
+        padding: 5px 15px; /* Réduit l'espace interne (haut et bas) des cellules */
+        height: 40px; /* Ajuste la hauteur spécifique de la ligne */
+        font-size: 14px; /* Optionnel : Ajuste la taille du texte si nécessaire */
+        background-color: #4CAF50; /* Bleu-vert pour la première ligne */
+        color: white; /* Texte en blanc */
+    }
 
-    
-        /* Hauteur des cellules des sous-sous-sections */
+    /* Style des cellules de la deuxième ligne (contenu des sous-sections) */
+    .subsection-table tr:nth-child(2) td {
+        background-color: #e0f7fa; /* Vert d'eau très clair pour la deuxième ligne */
+    }
+
+    /* Hauteur des cellules des sous-sous-sections */
     .subsection-content {
         height: 100px; /* Ajuste selon tes besoins */
     }
