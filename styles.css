@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base d'Information Paie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #333;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab:hover, .tab.active {
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'accueil')">Accueil</div>
+            <div class="tab" onclick="openTab(event, 'calculs')">Calculs & Simulateurs</div>
+            <div class="tab" onclick="openTab(event, 'ressources')">Ressources</div>
+            <div class="tab" onclick="openTab(event, 'notes')">Notes</div>
+        </div>
+        
+        <div id="accueil" class="tab-content active">
+            <h2>Bienvenue sur ta base d'information paie</h2>
+            <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
+        </div>
+        
+        <div id="calculs" class="tab-content">
+            <h2>Calculs & Simulateurs</h2>
+            <div class="box">Explication sur le calcul du salaire net/brut...</div>
+        </div>
+        
+        <div id="ressources" class="tab-content">
+            <h2>Ressources</h2>
+            <div class="box">Liens vers les textes de loi et conventions collectives.</div>
+        </div>
+        
+        <div id="notes" class="tab-content">
+            <h2>Notes personnelles</h2>
+            <div class="box">Espace pour tes propres observations.</div>
+        </div>
+    </div>
+    
+    <script>
+        function openTab(event, tabId) {
+            let tabs = document.querySelectorAll('.tab-content');
+            let tabButtons = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

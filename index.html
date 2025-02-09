@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base d'Information Paie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #333;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab:hover, .tab.active {
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+        /* Style pour le formulaire de connexion */
+        #loginForm {
+            text-align: center;
+            margin-top: 100px;
+        }
+        #loginForm input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        #loginForm button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Formulaire de connexion -->
+    <div id="loginForm">
+        <h2>Veuillez entrer le mot de passe</h2>
+        <form id="login">
+            <input type="password" id="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+        <p id="error"></p>
+    </div>
+
+    <!-- Contenu protégé -->
+    <div id="protectedContent" style="display:none;">
+        <div class="container">
+            <div class="tabs">
+                <a href="accueil.html" class="tab">Accueil</a>
+                <a href="mon-cahier-paie.html" class="tab">Mon Cahier Paie</a>
+                <a href="ccn.html" class="tab">CCN</a>
+                <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
+                <a href="silae.html" class="tab">SILAE</a>
+                <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
+                <a href="contacts.html" class="tab">Contacts</a>
+            </div>
+
+            <div id="accueil" class="tab-content active">
+                <h2>Bienvenue sur ta base d'information paie</h2>
+                <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
+            </div>
+
+            <div id="mon-cahier-paie" class="tab-content">
+                <h2>Mon Cahier Paie</h2>
+                <div class="box">Exemples et conseils sur la gestion de la paie.</div>
+            </div>
+
+            <div id="ccn" class="tab-content">
+                <h2>CCN</h2>
+                <div class="box">Informations sur les conventions collectives nationales.</div>
+            </div>
+
+            <div id="calculs-simulateurs" class="tab-content">
+                <h2>Calculs et Simulateurs</h2>
+                <div class="box">Explication sur le calcul du salaire net/brut...</div>
+            </div>
+
+            <div id="silae" class="tab-content">
+                <h2>SILAE</h2>
+                <div class="box">Guide d'utilisation de SILAE pour la gestion de la paie.</div>
+            </div>
+
+            <div id="questions-a-approndir" class="tab-content">
+                <h2>Questions à approfondir</h2>
+                <div class="box">Points à explorer plus en détail.</div>
+            </div>
+
+            <div id="contacts" class="tab-content">
+                <h2>Contacts</h2>
+                <p>Tu peux ici retrouver les informations pour nous contacter :</p>
+                <ul>
+                    <li><strong>Email :</strong> support@mesinfospaie.com</li>
+                    <li><strong>Téléphone :</strong> 01 23 45 67 89</li>
+                    <li><strong>Adresse :</strong> 123 Rue de la Paie, 75000 Paris</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mot de passe codé en dur (à modifier pour être plus sécurisé)
+        const correctPassword = "yuna56400"; // Remplace ce mot de passe par le tien
+
+        // Soumission du formulaire
+        document.getElementById("login").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission du formulaire
+
+            const enteredPassword = document.getElementById("password").value; // Récupère le mot de passe saisi
+
+            // Vérifie si le mot de passe est correct
+            if (enteredPassword === correctPassword) {
+                document.getElementById("loginForm").style.display = "none"; // Cache le formulaire de connexion
+                document.getElementById("protectedContent").style.display = "block"; // Affiche le contenu protégé
+            } else {
+                document.getElementById("error").textContent = "Mot de passe incorrect."; // Affiche l'erreur si le mot de passe est incorrect
+            }
+        });
+
+        // Fonction pour afficher les onglets
+        function openTab(event, tabId) {
+            let tabs = document.querySelectorAll('.tab-content');
+            let tabButtons = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+    <!-- CDN Netlify CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.0/dist/netlify-cms.js"></script>
+</body>
+</html>
