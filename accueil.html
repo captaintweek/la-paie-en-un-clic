@@ -1,16 +1,189 @@
-<div id="menu-container"></div>
+<!DOCTYPE html>
+<html lang="fr">
 
-<style>
-    body {
-        background-image: url('images/1.dorures.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Base d'information sur la paie pour centraliser toutes les données utiles.">
+    <meta name="keywords" content="paie, salaire, ccn, simulateur paie, SILAE">
+    <meta name="author" content="Ton Nom">
+    <title>Accueil - Base d'Information Paie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Style de base pour la page */
+        body {
+            background-image: url('images/1.dorures.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-<script>
-    fetch("en-tete/menu.html")
-    .then(response => response.text())
-    .then(data => document.getElementById("menu-container").innerHTML = data);
-</script>
+        .data-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .data-table {
+            width: 38%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th, .data-table td {
+            border: 2px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #f4f4f4;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .data-table th[colspan] {
+            white-space: normal;
+        }
+
+        .data-table td:first-child {
+            width: 35%;
+        }
+
+        .data-table td:nth-child(2) {
+            width: 20%;
+        }
+
+        /* Style pour les boutons alignés horizontalement et couleur fuchsia */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        /* Style des boutons avec les images */
+        .button-container a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D5006D; /* Fuchsia */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 150px;
+            margin: 0 5px; /* Espacement entre les boutons */
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            flex-direction: column; /* Pour empiler le texte et l'image */
+        }
+
+        .button-container a img {
+            width: 50px; /* Taille uniforme de l'image (largeur) */
+            height: 50px; /* Taille uniforme de l'image (hauteur) */
+            margin-bottom: 10px; /* Espacement entre l'image et le texte */
+        }
+
+        .button-container a:hover {
+            background-color: #9C005C; /* Teinte plus foncée pour le survol */
+        }
+
+        /* Style pour les images en bas */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 40px;
+        }
+
+        .image-container img {
+            width: 170px; /* Taille uniforme des images */
+            height: 170px;
+            object-fit: contain; /* L'image sera complètement visible sans être coupée */
+        }
+
+        /* Nouveau style pour les boutons sous les images */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .button-row a {
+            background-color: #00b0ff; /* Bleu clair */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 180px;
+            display: inline-block;
+        }
+
+        .button-row a:hover {
+            background-color: #0081cb; /* Teinte plus foncée pour le survol */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu-container"></div>
+
+    <script>
+        fetch("en-tete/menu.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("menu-container").innerHTML = data);
+    </script>
+
+    <div class="container">
+        <!-- Contenu de la page d'accueil -->
+        <div class="data-container">
+            <!-- TABLEAU 1 : DONNEES EN VIGUEUR -->
+            <table class="data-table">
+                <tr><th colspan="2">Depuis le 1er novembre 2024 et<br> au 1er janvier 2025</th></tr>
+                <tr><td><strong>PMSS</strong></td><td>3 925 €</td></tr>
+                <tr><td><strong>SMIC horaire</strong></td><td>11,88 €</td></tr>
+                <tr><td><strong>SMIC mensuel</strong></td><td>1 801,80 €</td></tr>
+                <tr><td><strong>Minimum garanti</strong></td><td>4,22 €</td></tr>
+                <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,26 €</td></tr>
+            </table>
+
+            <!-- TABLEAU 2 : DONNEES N-1 -->
+            <table class="data-table">
+                <tr><th colspan="2">Données 2024 (de janvier à octobre)</th></tr>
+                <tr><td><strong>PMSS</strong></td><td>3 864 €</td></tr>
+                <tr><td><strong>SMIC horaire</strong></td><td>11,65 €</td></tr>
+                <tr><td><strong>SMIC mensuel</strong></td><td>1 766,96 €</td></tr>
+                <tr><td><strong>Minimum garanti</strong></td><td>4,15 €</td></tr>
+                <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,18 €</td></tr>
+            </table>
+        </div>
+
+        <!-- Section des images -->
+        <div class="image-container">
+            <img src="images/cahier.png" alt="cahier">
+            <img src="images/contacts.png" alt="contacts">
+            <img src="images/ccn.png" alt="ccn">
+            <img src="images/calculs.png" alt="calculs">
+            <img src="images/silae.png" alt="silae">
+            <img src="images/interrogations.png" alt="interrogations">
+        </div>
+
+        <!-- Section des boutons sous les images -->
+        <div class="button-row">
+            <a href="mon-cahier-paie.html">Mon Cahier Paie</a>
+            <a href="contacts.html">Contacts</a>
+            <a href="ccn.html">CCN</a>
+            <a href="calculs-simulateurs.html">Calculs</a>
+            <a href="silae.html">SILAE</a>
+            <a href="questions-a-approndir.html">Questions</a>
+        </div>
+    </div>
+</body>
+
+</html>
