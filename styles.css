@@ -8,7 +8,7 @@ body {
 
 /* Menu container */
 .menu-container {
-    position: fixed;
+    position: fixed; /* Laisser la position fixe pour le menu */
     top: 0;
     left: 0;
     width: 300px; /* Ajustement à 300px */
@@ -17,7 +17,7 @@ body {
     padding-top: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Ajout du scroll si le menu est long */
-    position: relative; /* Permet le positionnement absolu du lien "Accueil" */
+    z-index: 10; /* S'assurer que le menu reste au-dessus du contenu */
 }
 
 /* Style for the menu list */
@@ -105,17 +105,19 @@ body {
 
 /* Style pour positionner uniquement le lien "Accueil" en bas */
 .accueil-link {
-    position: absolute;
-    bottom: 20px; /* Espace de 20px par rapport au bas */
-    width: 100%; /* Le lien occupera toute la largeur du menu */
-    text-align: center; /* Centrer le texte du lien */
-    padding: 10px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
-    background-color: #f4f4f4; /* Fond identique à celui du menu */
-    color: #333; /* Couleur du texte */
-    text-decoration: none; /* Retirer la décoration par défaut */
+    position: fixed; /* Utilisation de fixed pour qu'il reste visible en bas */
+    bottom: 20px; /* Espacement de 20px par rapport au bas */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    z-index: 9999; /* Pour qu'il reste au-dessus de tout autre élément */
 }
 
 .accueil-link:hover {
-    background-color: #ddd; /* Fond au survol */
-    color: #009999; /* Changer la couleur du texte au survol */
+    background-color: #ddd;
+    color: #009999;
 }
