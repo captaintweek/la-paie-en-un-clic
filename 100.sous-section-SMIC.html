@@ -1,10 +1,28 @@
-function loadMenu() {
-    fetch('menu.html')  // Charger uniquement le menu
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('menu-container').innerHTML = data;
-        })
-        .catch(error => console.error('Erreur lors du chargement du menu:', error));
-}
-
-window.onload = loadMenu;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIC, PMSS et autres données utiles</title>
+    <script>
+        function loadMenu() {
+            fetch('menu-moncahierpaie.html')  // Correction du chemin du fichier menu
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                })
+                .catch(error => console.error('Erreur lors du chargement du menu:', error));
+        }
+        
+        window.onload = loadMenu;
+    </script>
+</head>
+<body>
+    <div id="menu-container"></div> <!-- Assurer que cet élément est bien présent pour charger le menu -->
+    
+    <div class="content-container">
+        <h1>SMIC, PMSS et autres données utiles</h1>
+        <p>Contenu de la section sur le SMIC et autres informations utiles.</p>
+    </div>
+</body>
+</html>
