@@ -45,14 +45,16 @@
         border: 1px solid #ddd;
     }
 
-    /* Hauteur réduite pour la première ligne des tableaux (titres des sous-sections) */
-    .subsection-table tr:first-child td {
-        padding: 5px 12px; /* Réduit l'espace interne (haut et bas) des cellules */
-        height: 35px; /* Ajuste la hauteur spécifique de la ligne */
-        font-size: 14px; /* Optionnel : Ajuste la taille du texte si nécessaire */
-        background-color: #009999; /* bleu  vert  pour la première ligne */
-        color: #b37700; /* Texte en marron foncé */
-    }
+/* Hauteur réduite pour la première ligne des tableaux (titres des sous-sections) */
+.subsection-table tr:first-child td {
+    padding: 5px 12px; /* Réduit l'espace interne (haut et bas) des cellules */
+    height: 35px; /* Ajuste la hauteur spécifique de la ligne */
+    font-size: 14px; /* Optionnel : Ajuste la taille du texte si nécessaire */
+    background-color: #009999; /* Bleu-vert pour la première ligne */
+    color: #b37700; /* Texte en marron foncé */
+    font-weight: bold; /* Texte en gras */
+}
+
 
     /* Style des cellules de la deuxième ligne (contenu des sous-sections) */
     .subsection-table tr:nth-child(2) td {
