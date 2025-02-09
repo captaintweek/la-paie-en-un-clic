@@ -7,14 +7,60 @@
     <!-- Inclure ton fichier CSS externe si tu en utilises un -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Style interne pour le bouton "Accueil" si pas de fichier CSS externe -->
+    <!-- Style interne pour le bouton "Accueil" et la mise en page du menu -->
     <style>
-        /* Style pour le bouton Accueil */
+        /* Mise en page avec Flexbox pour diviser l'écran */
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container du menu à gauche */
+        .menu-container {
+            width: 250px; /* Largeur du menu (ajustable selon tes besoins) */
+            position: fixed; /* Le menu reste fixe sur la gauche */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #f4f4f4; /* Couleur de fond du menu */
+            padding: 20px;
+            z-index: 1000; /* Assure-toi que le menu est au-dessus du contenu */
+            overflow-y: auto; /* Si le menu dépasse la hauteur de la page, ajouter un défilement */
+        }
+
+        /* Style pour les éléments du menu */
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .menu-item:hover {
+            background-color: #ddd;
+        }
+
+        /* Partie du contenu à droite du menu */
+        .content {
+            margin-left: 250px; /* Marge gauche pour ne pas chevaucher le menu */
+            padding: 20px;
+            width: calc(100% - 250px); /* La largeur est ajustée pour ne pas chevaucher */
+        }
+
+        /* Style du bouton Accueil en haut à droite */
         .header {
             position: fixed;
             top: 10px;
             right: 10px;
-            z-index: 1000; /* S'assurer que le bouton est au-dessus du contenu */
+            z-index: 1000; /* Assurer que le bouton est au-dessus du contenu */
         }
 
         .home-button {
@@ -48,14 +94,4 @@
             <li><a href="130.sous-section-Taxes-impots.html" class="menu-item">Taxes, impôts et autres cotisations</a></li>
             <li><a href="140.sous-section-Salaries-en-situation.html" class="menu-item">Les salariés en situations particulières</a></li>
             <li><a href="150.sous-section-Parametrage-DSN.html" class="menu-item">Le paramétrage DSN</a></li>
-            <li><a href="160.sous-section-Effectifs.html" class="menu-item">Les effectifs</a></li>
-            <li><a href="170.sous-section-Echeances-declarations.html" class="menu-item">Les échéances et déclarations</a></li>
-            <li><a href="180.sous-section-Procedures-sauvegarde.html" class="menu-item">Les procédures sauvegarde, RJ et liquidation</a></li>
-            <li><a href="190.sous-section-Embauche-salarie.html" class="menu-item">L'embauche du salarié</a></li>
-            <li><a href="200.sous-section-Sortie-salarie.html" class="menu-item">La sortie du salarié</a></li>
-            <li><a href="210.sous-section-Audits-controles.html" class="menu-item">Les audits et contrôles</a></li>
-        </ul>
-    </div>
-
-</body>
-</html>
+            <li><a href="160.sous-section-Effectifs.htm
