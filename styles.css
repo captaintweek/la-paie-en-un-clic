@@ -11,7 +11,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 300px; /* Augmenter la largeur du menu */
     background-color: #f4f4f4;
     height: 100%;
     padding-top: 20px;
@@ -40,9 +40,9 @@ body {
 
 /* Content container */
 .content-container {
-    margin-left: 220px; /* Space for the fixed menu */
+    margin-left: 320px; /* Ajuster la marge pour correspondre à la nouvelle largeur du menu */
     padding: 20px;
-    width: calc(100% - 220px);
+    width: calc(100% - 320px); /* S'assurer que le contenu prend le bon espace */
 }
 
 /* Heading Style */
@@ -54,7 +54,7 @@ h1 {
 .navigation {
     position: fixed;
     bottom: 20px;
-    left: 220px;
+    left: 320px; /* Ajuster en fonction du nouveau menu */
     right: 20px;
     display: flex;
     justify-content: space-between;
