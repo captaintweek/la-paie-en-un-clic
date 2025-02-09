@@ -13,41 +13,67 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
 
-<!-- ajout d'un contener contenant deux tableaux  -->
-    
         .data-container {
             display: flex;
             justify-content: space-between;
             margin-top: 30px;
+            width: 100%;
         }
+
         .data-table {
             width: 38%;
             border-collapse: collapse;
             background: white;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .data-table th, .data-table td {
             border: 2px solid #ddd;
             padding: 10px;
             text-align: left;
         }
+
         .data-table th {
             background-color: #f4f4f4;
             text-align: center;
             white-space: nowrap;
         }
+
         .data-table th[colspan] {
             white-space: normal;
         }
+
         .data-table td:first-child {
             width: 35%;
         }
+
         .data-table td:nth-child(2) {
             width: 20%;
         }
-    </style>
 
-<!-- les différents onglets du menu principal -->
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -58,10 +84,10 @@
             <a href="calculs-simulateurs.html" class="tab">Calculs et Simulateurs</a>
             <a href="silae.html" class="tab">SILAE</a>
             <a href="questions-a-approndir.html" class="tab">Questions à approfondir</a>
+            <a href="contacts.html" class="tab">Contacts</a> <!-- Nouveau lien -->
         </div>
 
-<!-- Contenu de la page d'accueil -->
-        
+        <!-- Contenu de la page d'accueil -->
         <h2>Données paie </h2>
         <div class="data-container">
             
@@ -85,6 +111,17 @@
                 <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,18 €</td></tr>
             </table>
         </div>
+
+        <!-- Ajouter les boutons à droite -->
+        <div class="buttons-container">
+            <a href="mon-cahier-paie.html"><button class="btn">Mon Cahier Paie</button></a>
+            <a href="contacts.html"><button class="btn">Contacts</button></a>
+            <a href="ccn.html"><button class="btn">CCN</button></a>
+            <a href="calculs-simulateurs.html"><button class="btn">Calculs et Simulateurs</button></a>
+            <a href="silae.html"><button class="btn">SILAE</button></a>
+            <a href="questions-a-approndir.html"><button class="btn">Questions à approfondir</button></a>
+        </div>
+
     </div>
 </body>
 </html>
