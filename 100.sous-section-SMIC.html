@@ -1,0 +1,14 @@
+<script>
+    // Fonction pour charger le menu
+    function chargerMenu() {
+        fetch('menu-moncahierpaie.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Erreur lors du chargement du menu :', error));
+    }
+
+    // Appeler la fonction pour charger le menu dès que la page est chargée
+    window.onload = chargerMenu;
+</script>
