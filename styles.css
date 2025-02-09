@@ -101,3 +101,13 @@ body {
 #subsection-buttons-container button:hover {
     background-color: #e0e0e0;
 }
+
+/* Style pour positionner uniquement le lien "Accueil" en bas */
+.accueil-link {
+    position: absolute;
+    bottom: 0;
+    width: 100%;  /* Optionnel : pour que le lien occupe toute la largeur du menu */
+    text-align: center; /* Centrer le texte du lien */
+    padding: 10px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
+}
+
