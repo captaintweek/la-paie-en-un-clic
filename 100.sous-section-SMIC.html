@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMIC, PMSS et autres données utiles</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Fonction pour charger dynamiquement le menu
+        function loadMenu() {
+            fetch('menu-moncahierpaie.html')  // Charger le fichier menu-moncahierpaie.html
+                .then(response => response.text())  // Convertir la réponse en texte
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;  // Insérer le contenu dans l'élément avec l'ID 'menu-container'
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement du menu:', error);
+                });
+        }
+
+        // Charger le menu dès que le document est prêt
+        window.onload = loadMenu;
+    </script>
 </head>
 <body>
 
+    <!-- Conteneur du menu -->
+    <div id="menu-container"></div>
+
+    <!-- Contenu spécifique de la sous-section -->
     <div class="content">
         <h1>SMIC, PMSS et autres données utiles</h1>
         <p>Le SMIC (Salaire Minimum Interprofessionnel de Croissance), la PMSS (Plafond Mensuel de la Sécurité Sociale), et d'autres données utiles sont essentiels pour le calcul de la paie. Cette section fournit des informations à jour sur ces valeurs.</p>
