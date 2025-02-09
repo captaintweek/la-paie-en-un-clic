@@ -57,17 +57,26 @@
             margin-top: 30px;
         }
 
+        /* Style des boutons avec les images */
         .button-container a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: #D5006D; /* Fuchsia */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            text-align: center;
             width: 150px;
             margin: 0 5px; /* Espacement entre les boutons */
-            display: inline-block;
+            text-align: center;
             text-transform: uppercase;
+            position: relative;
+        }
+
+        .button-container a img {
+            max-height: 20px; /* Ajuster la taille de l'image */
+            margin-right: 10px; /* Espacement entre l'image et le texte */
         }
 
         .button-container a:hover {
@@ -114,14 +123,32 @@
             </table>
         </div>
 
-        <!-- Boutons dans la zone libre à droite -->
+        <!-- Boutons dans la zone libre à droite avec images -->
         <div class="button-container">
-            <a href="mon-cahier-paie.html">Mon Cahier Paie</a>
-            <a href="contacts.html">Contacts</a>
-            <a href="ccn.html">CCN</a>
-            <a href="calculs-simulateurs.html">Calculs et Simulateurs</a>
-            <a href="silae.html">SILAE</a>
-            <a href="questions-a-approndir.html">Questions à approfondir</a>
+            <a href="mon-cahier-paie.html">
+                <img src="images/cahier.png" alt="Mon Cahier Paie">
+                Mon Cahier Paie
+            </a>
+            <a href="contacts.html">
+                <img src="images/contacts.png" alt="Contacts">
+                Contacts
+            </a>
+            <a href="ccn.html">
+                <img src="images/ccn.png" alt="CCN">
+                CCN
+            </a>
+            <a href="calculs-simulateurs.html">
+                <img src="images/calculs.png" alt="Calculs et Simulateurs">
+                Calculs et Simulateurs
+            </a>
+            <a href="silae.html">
+                <img src="images/silae.png" alt="SILAE">
+                SILAE
+            </a>
+            <a href="questions-a-approndir.html">
+                <img src="images/interrogations.png" alt="Questions à approfondir">
+                Questions à approfondir
+            </a>
         </div>
     </div>
 </body>
