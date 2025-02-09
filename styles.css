@@ -6,7 +6,7 @@ body {
     background-color: #f8f8f8;
 }
 
-/* Menu mon cahier paie container */
+/* Menu container */
 .menu-container {
     position: fixed;
     top: 0;
@@ -20,7 +20,7 @@ body {
     position: relative; /* Permet le positionnement absolu du lien "Accueil" */
 }
 
-/* Style for the menu mon cahier paie list */
+/* Style for the menu list */
 .menu {
     list-style-type: none;
     padding: 0;
@@ -40,7 +40,7 @@ body {
     color: #009999;
 }
 
-/* Content container mon cahier paie */
+/* Content container */
 .content-container {
     position: relative;
     margin-left: 320px; /* Ajusté pour correspondre à la largeur du menu */
@@ -56,7 +56,7 @@ body {
     margin-left: 10px;
 }
 
-/* Navigation Buttons (Previous/Next)  mon cahier paie*/
+/* Navigation Buttons (Previous/Next) */
 .navigation {
     position: fixed;
     bottom: 20px;
@@ -106,10 +106,10 @@ body {
 /* Style pour positionner uniquement le lien "Accueil" en bas */
 .accueil-link {
     position: absolute;
-    bottom: 100px; /* Espace de 20px par rapport au bas */
+    bottom: 40px; /* Espace de 20px par rapport au bas */
     width: 100%; /* Le lien occupera toute la largeur du menu */
     text-align: center; /* Centrer le texte du lien */
-    padding: 10px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
+    padding: 20px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
     background-color: #f4f4f4; /* Fond identique à celui du menu */
     color: #333; /* Couleur du texte */
     text-decoration: none; /* Retirer la décoration par défaut */
