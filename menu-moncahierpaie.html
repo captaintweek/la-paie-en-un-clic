@@ -1,43 +1,61 @@
-<div class="header">
-    <a href="accueil.html" class="home-button">Accueil</a>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- Inclure ton fichier CSS externe si tu en utilises un -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Style interne pour le bouton "Accueil" si pas de fichier CSS externe -->
+    <style>
+        /* Style pour le bouton Accueil */
+        .header {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000; /* S'assurer que le bouton est au-dessus du contenu */
+        }
 
-<div class="menu-container">
-    <ul class="menu">
-        <li><a href="100.sous-section-SMIC.html" class="menu-item">SMIC, PMSS et autres données utiles</a></li>
-        <li><a href="110.sous-section-Elements-du-brut.html" class="menu-item">Elements du brut</a></li>
-        <li><a href="120.sous-section-Cotisations.html" class="menu-item">Les cotisations de sécurité sociale...</a></li>
-        <li><a href="130.sous-section-Taxes-impots.html" class="menu-item">Taxes, impôts et autres cotisations</a></li>
-        <li><a href="140.sous-section-Salaries-en-situation.html" class="menu-item">Les salariés en situations particulières</a></li>
-        <li><a href="150.sous-section-Parametrage-DSN.html" class="menu-item">Le paramétrage DSN</a></li>
-        <li><a href="160.sous-section-Effectifs.html" class="menu-item">Les effectifs</a></li>
-        <li><a href="170.sous-section-Echeances-declarations.html" class="menu-item">Les échéances et déclarations</a></li>
-        <li><a href="180.sous-section-Procedures-sauvegarde.html" class="menu-item">Les procédures sauvegarde, RJ et liquidation</a></li>
-        <li><a href="190.sous-section-Embauche-salarie.html" class="menu-item">L'embauche du salarié</a></li>
-        <li><a href="200.sous-section-Sortie-salarie.html" class="menu-item">La sortie du salarié</a></li>
-        <li><a href="210.sous-section-Audits-controles.html" class="menu-item">Les audits et contrôles</a></li>
-    </ul>
-</div>
+        .home-button {
+            background-color: #4CAF50; /* Couleur de fond du bouton */
+            color: white; /* Couleur du texte */
+            padding: 10px 20px; /* Espacement du texte dans le bouton */
+            text-decoration: none; /* Supprimer le soulignement du lien */
+            font-size: 16px; /* Taille du texte */
+            border-radius: 5px; /* Coins arrondis */
+            transition: background-color 0.3s ease; /* Effet au survol */
+        }
 
-/* Style pour le bouton Accueil */
-.header {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000; /* S'assurer que le bouton est au-dessus du contenu */
-}
+        .home-button:hover {
+            background-color: #45a049; /* Couleur du bouton au survol */
+        }
+    </style>
+</head>
+<body>
 
-.home-button {
-    background-color: #4CAF50; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte */
-    padding: 10px 20px; /* Espacement du texte dans le bouton */
-    text-decoration: none; /* Supprimer le soulignement du lien */
-    font-size: 16px; /* Taille du texte */
-    border-radius: 5px; /* Coins arrondis */
-    transition: background-color 0.3s ease; /* Effet au survol */
-}
+    <!-- Bouton Accueil en haut à droite -->
+    <div class="header">
+        <a href="accueil.html" class="home-button">Accueil</a>
+    </div>
 
-.home-button:hover {
-    background-color: #45a049; /* Couleur du bouton au survol */
-}
+    <!-- Menu -->
+    <div class="menu-container">
+        <ul class="menu">
+            <li><a href="100.sous-section-SMIC.html" class="menu-item">SMIC, PMSS et autres données utiles</a></li>
+            <li><a href="110.sous-section-Elements-du-brut.html" class="menu-item">Elements du brut</a></li>
+            <li><a href="120.sous-section-Cotisations.html" class="menu-item">Les cotisations de sécurité sociale...</a></li>
+            <li><a href="130.sous-section-Taxes-impots.html" class="menu-item">Taxes, impôts et autres cotisations</a></li>
+            <li><a href="140.sous-section-Salaries-en-situation.html" class="menu-item">Les salariés en situations particulières</a></li>
+            <li><a href="150.sous-section-Parametrage-DSN.html" class="menu-item">Le paramétrage DSN</a></li>
+            <li><a href="160.sous-section-Effectifs.html" class="menu-item">Les effectifs</a></li>
+            <li><a href="170.sous-section-Echeances-declarations.html" class="menu-item">Les échéances et déclarations</a></li>
+            <li><a href="180.sous-section-Procedures-sauvegarde.html" class="menu-item">Les procédures sauvegarde, RJ et liquidation</a></li>
+            <li><a href="190.sous-section-Embauche-salarie.html" class="menu-item">L'embauche du salarié</a></li>
+            <li><a href="200.sous-section-Sortie-salarie.html" class="menu-item">La sortie du salarié</a></li>
+            <li><a href="210.sous-section-Audits-controles.html" class="menu-item">Les audits et contrôles</a></li>
+        </ul>
+    </div>
 
+</body>
+</html>
