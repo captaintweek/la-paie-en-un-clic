@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <!-- Inclure ton fichier CSS externe si tu en utilises un -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Style interne pour le bouton "Accueil" et la mise en page du menu -->
     <style>
         /* Mise en page avec Flexbox pour diviser l'écran */
         body {
@@ -16,20 +14,19 @@
             padding: 0;
         }
 
-        /* Container du menu à gauche avec largeur augmentée */
+        /* Container du menu à gauche avec largeur de 300px */
         .menu-container {
-            width: 350px; /* Largeur du menu augmentée */
-            position: fixed; /* Le menu reste fixe sur la gauche */
+            width: 300px; /* Largeur du menu ajustée à 300px */
+            position: fixed;
             top: 0;
             left: 0;
             bottom: 0;
-            background-color: #f4f4f4; /* Couleur de fond du menu */
+            background-color: #f4f4f4;
             padding: 20px;
-            z-index: 1000; /* Assure-toi que le menu est au-dessus du contenu */
-            overflow-y: auto; /* Si le menu dépasse la hauteur de la page, ajouter un défilement */
+            z-index: 1000;
+            overflow-y: auto;
         }
 
-        /* Style pour les éléments du menu */
         .menu {
             list-style-type: none;
             padding: 0;
@@ -48,39 +45,37 @@
             background-color: #ddd;
         }
 
-        /* Partie du contenu à droite du menu */
+        /* Partie du contenu à droite du menu avec une marge ajustée */
         .content {
-            margin-left: 360px; /* Marge gauche pour ne pas chevaucher le menu élargi */
+            margin-left: 310px; /* Ajustement pour ne pas chevaucher le menu */
             padding: 20px;
-            width: calc(100% - 360px); /* La largeur est ajustée pour ne pas chevaucher */
+            width: calc(100% - 310px); /* La largeur est ajustée pour ne pas chevaucher */
         }
 
-        /* Style du bouton Accueil en haut à droite */
         .header {
             position: fixed;
             top: 10px;
             right: 10px;
-            z-index: 1000; /* Assurer que le bouton est au-dessus du contenu */
+            z-index: 1000;
         }
 
         .home-button {
-            background-color: #e60073; /* Couleur de fond du bouton en fuchsia */
-            color: white; /* Couleur du texte */
-            padding: 10px 20px; /* Espacement du texte dans le bouton */
-            text-decoration: none; /* Supprimer le soulignement du lien */
-            font-size: 16px; /* Taille du texte */
-            border-radius: 5px; /* Coins arrondis */
-            transition: background-color 0.3s ease; /* Effet au survol */
+            background-color: #e60073;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .home-button:hover {
-            background-color: #d40067; /* Couleur du bouton au survol en fuchsia plus foncé */
+            background-color: #d40067;
         }
     </style>
 </head>
 <body>
 
-    <!-- Bouton Accueil en haut à droite -->
     <div class="header">
         <a href="accueil.html" class="home-button">Accueil</a>
     </div>
@@ -98,12 +93,10 @@
         </ul>
     </div>
 
-    <!-- Contenu principal -->
     <div class="content">
         <h1>SMIC, PMSS et autres données utiles</h1>
         <p>Le SMIC (Salaire Minimum Interprofessionnel de Croissance), la PMSS (Plafond Mensuel de la Sécurité Sociale), et d'autres données utiles sont essentiels pour le calcul de la paie. Cette section fournit des informations à jour sur ces valeurs.</p>
-        <!-- Ajoutez ici le contenu spécifique à la page -->
-        <p>Par exemple, le SMIC actuel est de 1 300 € brut par mois. Le plafond de la Sécurité Sociale est de 3 428 € par mois, ce qui signifie que les cotisations sociales sont calculées sur la base de ce montant pour les salariés dont le salaire est supérieur.</p>
+        <p>Le SMIC actuel est de 1 300 € brut par mois. Le plafond de la Sécurité Sociale est de 3 428 € par mois, ce qui signifie que les cotisations sociales sont calculées sur la base de ce montant pour les salariés dont le salaire est supérieur.</p>
         <p>Les informations suivantes incluent les valeurs mises à jour pour ces critères en fonction des évolutions législatives et réglementaires.</p>
     </div>
 
