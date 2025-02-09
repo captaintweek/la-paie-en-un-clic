@@ -72,11 +72,13 @@
             text-align: center;
             text-transform: uppercase;
             position: relative;
+            flex-direction: column; /* Pour empiler le texte et l'image */
         }
 
         .button-container a img {
-            max-height: 20px; /* Ajuster la taille de l'image */
-            margin-right: 10px; /* Espacement entre l'image et le texte */
+            width: 50px; /* Taille uniforme de l'image (largeur) */
+            height: 50px; /* Taille uniforme de l'image (hauteur) */
+            margin-bottom: 10px; /* Espacement entre l'image et le texte */
         }
 
         .button-container a:hover {
@@ -123,7 +125,7 @@
             </table>
         </div>
 
-        <!-- Boutons dans la zone libre à droite avec images -->
+        <!-- Boutons dans la zone libre à droite avec images sous les boutons -->
         <div class="button-container">
             <a href="mon-cahier-paie.html">
                 <img src="images/cahier.png" alt="Mon Cahier Paie">
