@@ -1,37 +1,57 @@
 <!DOCTYPE html>
-
-<style>
-    body {
-        background-image: url('images/1.hokusai.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
-
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <style>
+        body {
+            background-image: url('images/1.hokusai.png'); /* Assure-toi que l'image est bien à cet emplacement */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .login-form {
-            display: block;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f8f8f8;
+            background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement transparent pour voir le fond */
+            padding: 30px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             width: 300px;
             text-align: center;
         }
+
         .login-form input {
             padding: 10px;
             margin: 10px 0;
             width: 100%;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        .login-form button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+
+        #error-message {
+            color: red;
+            display: none;
         }
     </style>
 </head>
@@ -40,7 +60,7 @@
         <h2>Connexion</h2>
         <input type="password" id="password" placeholder="Mot de passe" />
         <button onclick="checkPassword()">Se connecter</button>
-        <p id="error-message" style="color: red; display: none;">Mot de passe incorrect</p>
+        <p id="error-message">Mot de passe incorrect</p>
     </div>
 
     <script>
@@ -57,4 +77,3 @@
     </script>
 </body>
 </html>
->>>>>>> c3a8f44b1414f68ea127c0ac56e4c3ce9c504ee0
