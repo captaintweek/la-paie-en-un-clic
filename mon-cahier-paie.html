@@ -5,20 +5,70 @@
   <!-- Les boutons seront insérés ici par JavaScript -->
 </div>
 
+<!-- Style CSS -->
 <style>
-
-<script src="subsections.js"></script>
-
     body {
         background-image: url('images/feuilles.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
+
+    #subsection-buttons-container {
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+
+    #subsection-buttons-container button {
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #subsection-buttons-container button:hover {
+        background-color: #e0e0e0;
+    }
 </style>
 
+<!-- Scripts JavaScript -->
 <script>
+    // Charger le menu depuis un fichier HTML externe
     fetch("en-tete/menu.html")
     .then(response => response.text())
     .then(data => document.getElementById("menu-container").innerHTML = data);
+
+    // Charger les sous-sections
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = [
+            { title: "SMIC, PMSS et autres données utiles", link: "smic-pmss.html" },
+            { title: "Elements du brut", link: "elements-du-brut.html" },
+            { title: "Les cotisations de sécurité sociale, retraite, prévoyance, mutuelle", link: "cotisations.html" },
+            { title: "Taxes, impôts et autres cotisations", link: "taxes-impots.html" },
+            { title: "Les salariés en situations particulières et les non salariés", link: "salaires-situations-particulières.html" },
+            { title: "Le paramétrage DSN", link: "parametrage-dsn.html" },
+            { title: "Les effectifs", link: "effectifs.html" },
+            { title: "Les échéances et déclarations", link: "echeances-declarations.html" },
+            { title: "Les procédures sauvegarde, RJ et liquidation", link: "procedures-sauvegarde.html" },
+            { title: "L'embauche du salarié", link: "embauche-salarie.html" },
+            { title: "La sortie du salarié", link: "sortie-salarie.html" },
+            { title: "Les audits et contrôles", link: "audits-controles.html" }
+        ];
+
+        const container = document.getElementById("subsection-buttons-container");
+
+        // Créer un bouton pour chaque section
+        sections.forEach(section => {
+            const button = document.createElement("button");
+            button.textContent = section.title;
+            button.onclick = () => window.location.href = section.link; // Redirige vers la sous-section correspondante
+            container.appendChild(button);
+        });
+    });
 </script>
