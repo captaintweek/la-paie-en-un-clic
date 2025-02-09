@@ -106,10 +106,10 @@ body {
 /* Style pour positionner uniquement le lien "Accueil" en bas */
 .accueil-link {
     position: absolute;
-    bottom: 20px; /* Espace de 20px par rapport au bas */
+    bottom: 40px; /* Espace de 20px par rapport au bas */
     width: 100%; /* Le lien occupera toute la largeur du menu */
     text-align: center; /* Centrer le texte du lien */
-    padding: 10px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
+    padding: 20px 0; /* Optionnel : ajouter un peu d'espace autour du lien */
     background-color: #f4f4f4; /* Fond identique à celui du menu */
     color: #333; /* Couleur du texte */
     text-decoration: none; /* Retirer la décoration par défaut */
