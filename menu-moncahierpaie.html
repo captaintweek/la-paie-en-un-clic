@@ -1,101 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        /* Mise en page avec Flexbox pour diviser l'écran */
-        body {
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Container du menu à gauche avec largeur de 300px */
-        .menu-container {
-            width: 300px; /* Largeur du menu ajustée à 300px */
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            background-color: #f4f4f4;
-            padding: 20px;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-item {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .menu-item:hover {
-            background-color: #ddd;
-        }
-
-        /* Partie du contenu à droite du menu avec une marge ajustée */
-        .content {
-            margin-left: 310px; /* Ajustement pour ne pas chevaucher le menu */
-            padding: 20px;
-            width: calc(100% - 310px); /* La largeur est ajustée pour ne pas chevaucher */
-        }
-
-        .header {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-
-        .home-button {
-            background-color: #e60073;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .home-button:hover {
-            background-color: #d40067;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <a href="accueil.html" class="home-button">Accueil</a>
-    </div>
-
-    <!-- Menu -->
-    <div class="menu-container">
-        <ul class="menu">
-            <li><a href="100.sous-section-SMIC.html" class="menu-item">SMIC, PMSS et autres données utiles</a></li>
-            <li><a href="110.sous-section-Elements-du-brut.html" class="menu-item">Elements du brut</a></li>
-            <li><a href="120.sous-section-Cotisations.html" class="menu-item">Les cotisations de sécurité sociale...</a></li>
-            <li><a href="130.sous-section-Taxes-impots.html" class="menu-item">Taxes, impôts et autres cotisations</a></li>
-            <li><a href="140.sous-section-Salaries-en-situation.html" class="menu-item">Les salariés en situations particulières</a></li>
-            <li><a href="150.sous-section-Parametrage-DSN.html" class="menu-item">Le paramétrage DSN</a></li>
-            <li><a href="160.sous-section-Effectifs.html" class="menu-item">Effectifs</a></li>
-        </ul>
-    </div>
-
-    <div class="content">
-        <!-- Le contenu de la sous-section spécifique sera chargé ici -->
-    </div>
-
-</body>
-</html>
+<div class="menu-container">
+    <ul class="menu">
+        <li><a href="100.sous-section-SMIC.html" class="menu-item">SMIC, PMSS et autres données utiles</a></li>
+        <li><a href="110.sous-section-Elements-du-brut.html" class="menu-item">Elements du brut</a></li>
+        <li><a href="120.sous-section-Cotisations.html" class="menu-item">Les cotisations de sécurité sociale...</a></li>
+        <li><a href="130.sous-section-Taxes-impots.html" class="menu-item">Taxes, impôts et autres cotisations</a></li>
+        <li><a href="140.sous-section-Salaries-en-situation.html" class="menu-item">Les salariés en situations particulières</a></li>
+        <li><a href="150.sous-section-Parametrage-DSN.html" class="menu-item">Le paramétrage DSN</a></li>
+        <li><a href="160.sous-section-Effectifs.html" class="menu-item">Effectifs</a></li>
+    </ul>
+</div>
