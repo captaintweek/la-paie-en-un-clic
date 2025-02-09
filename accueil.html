@@ -85,6 +85,19 @@
             background-color: #9C005C; /* Teinte plus foncée pour le survol */
         }
 
+        /* Style pour les images en bas */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .image-container img {
+            width: 80px; /* Taille uniforme des images */
+            height: 80px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -123,6 +136,16 @@
                 <tr><td><strong>Minimum garanti</strong></td><td>4,15 €</td></tr>
                 <tr><td><strong>Valeur tickets restaurant</strong></td><td>7,18 €</td></tr>
             </table>
+        </div>
+
+        <!-- Section des images -->
+        <div class="image-container">
+            <img src="images/image1.png" alt="Image 1">
+            <img src="images/image2.png" alt="Image 2">
+            <img src="images/image3.png" alt="Image 3">
+            <img src="images/image4.png" alt="Image 4">
+            <img src="images/image5.png" alt="Image 5">
+            <img src="images/image6.png" alt="Image 6">
         </div>
     </div>
 </body>
