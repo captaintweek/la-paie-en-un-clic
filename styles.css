@@ -1,187 +1,110 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base d'Information Paie</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border: 1px solid #ddd;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #333;
-        }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-        }
-        .tab:hover, .tab.active {
-            border-bottom: 2px solid #333;
-            font-weight: bold;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-            background: #f9f9f9;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="tabs">
-            <div class="tab active" onclick="openTab(event, 'accueil')">Accueil</div>
-            <div class="tab" onclick="openTab(event, 'calculs')">Calculs & Simulateurs</div>
-            <div class="tab" onclick="openTab(event, 'ressources')">Ressources</div>
-            <div class="tab" onclick="openTab(event, 'notes')">Notes</div>
-        </div>
-        
-        <div id="accueil" class="tab-content active">
-            <h2>Bienvenue sur ta base d'information paie</h2>
-            <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
-        </div>
-        
-        <div id="calculs" class="tab-content">
-            <h2>Calculs & Simulateurs</h2>
-            <div class="box">Explication sur le calcul du salaire net/brut...</div>
-        </div>
-        
-        <div id="ressources" class="tab-content">
-            <h2>Ressources</h2>
-            <div class="box">Liens vers les textes de loi et conventions collectives.</div>
-        </div>
-        
-        <div id="notes" class="tab-content">
-            <h2>Notes personnelles</h2>
-            <div class="box">Espace pour tes propres observations.</div>
-        </div>
-    </div>
-    
-    <script>
-        function openTab(event, tabId) {
-            let tabs = document.querySelectorAll('.tab-content');
-            let tabButtons = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base d'Information Paie</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border: 1px solid #ddd;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #333;
-        }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-        }
-        .tab:hover, .tab.active {
-            border-bottom: 2px solid #333;
-            font-weight: bold;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .box {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px 0;
-            background: #f9f9f9;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="tabs">
-            <div class="tab active" onclick="openTab(event, 'accueil')">Accueil</div>
-            <div class="tab" onclick="openTab(event, 'calculs')">Calculs & Simulateurs</div>
-            <div class="tab" onclick="openTab(event, 'ressources')">Ressources</div>
-            <div class="tab" onclick="openTab(event, 'notes')">Notes</div>
-        </div>
-        
-        <div id="accueil" class="tab-content active">
-            <h2>Bienvenue sur ta base d'information paie</h2>
-            <p>Un espace personnel pour stocker toutes tes infos utiles sur la paie.</p>
-        </div>
-        
-        <div id="calculs" class="tab-content">
-            <h2>Calculs & Simulateurs</h2>
-            <div class="box">Explication sur le calcul du salaire net/brut...</div>
-        </div>
-        
-        <div id="ressources" class="tab-content">
-            <h2>Ressources</h2>
-            <div class="box">Liens vers les textes de loi et conventions collectives.</div>
-        </div>
-        
-        <div id="notes" class="tab-content">
-            <h2>Notes personnelles</h2>
-            <div class="box">Espace pour tes propres observations.</div>
-        </div>
-    </div>
-    
-    <script>
-        function openTab(event, tabId) {
-            let tabs = document.querySelectorAll('.tab-content');
-            let tabButtons = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
-</body>
-</html>
->>>>>>> c3a8f44b1414f68ea127c0ac56e4c3ce9c504ee0
+/* Test de mise à jour : 10 février 2025 */
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;  /* Choix d'une police de caractères lisible */
+    margin: 0;  /* Retrait des marges par défaut */
+    padding: 0;  /* Retrait des espacements par défaut */
+    background-color: #f8f8f8;  /* Couleur de fond claire et neutre */
+}
+
+/* Menu container (Conteneur du menu latéral) */
+.menu-container {
+    position: fixed;  /* Menu fixe à gauche pour une navigation persistante */
+    top: 0;  /* Positionné en haut de la page */
+    left: 0;  /* Aligné à gauche */
+    width: 300px;  /* Largeur du menu */
+    background-color: #f4f4f4;  /* Couleur de fond du menu */
+    height: 100%;  /* Hauteur du menu prend toute la page */
+    padding-top: 20px;  /* Espacement au-dessus du menu */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);  /* Ombre discrète autour du menu */
+    overflow-y: auto;  /* Ajout d'une barre de défilement verticale si le contenu dépasse */
+    z-index: 10;  /* Assurer que le menu reste au-dessus des autres éléments */
+}
+
+/* Style pour la liste du menu */
+.menu {
+    list-style-type: none;  /* Retrait des puces de la liste */
+    padding: 0;  /* Retrait des espacements internes */
+    margin: 0;  /* Retrait des marges par défaut */
+}
+
+/* Style des éléments du menu */
+.menu-item {
+    display: block;  /* Chaque élément du menu prend toute la largeur */
+    padding: 10px 20px;  /* Espacement interne pour l'élément */
+    color: #333;  /* Couleur de texte sombre */
+    text-decoration: none;  /* Retrait du souligné par défaut des liens */
+    font-weight: bold;  /* Texte en gras */
+}
+
+/* Effet de survol sur les éléments du menu */
+.menu-item:hover {
+    background-color: #ddd;  /* Couleur de fond au survol */
+    color: #009999;  /* Changement de couleur de texte au survol */
+}
+
+/* Content container (Conteneur de contenu principal) */
+.content-container {
+    position: relative;  /* Conteneur positionné de manière relative pour placer d'autres éléments à l'intérieur */
+    margin-left: 320px;  /* Décalage pour permettre l'affichage du menu fixe à gauche */
+    padding: 40px;  /* Espacement autour du contenu */
+    max-width: calc(100% - 340px);  /* S'assure que le contenu ne déborde pas à droite du menu */
+    background: white;  /* Fond blanc pour le contenu */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);  /* Ombre légère autour du contenu */
+    min-height: 100vh;  /* Hauteur minimale égale à la hauteur de la fenêtre pour un effet de remplissage */
+}
+
+/* Style pour le lien "Retour à l'accueil" en bas du menu */
+.accueil-link {
+    position: absolute;  /* Positionnement absolu pour le placer en bas du menu */
+    bottom: 20px;  /* Espacement de 20px du bas du menu */
+    left: 0;  /* Aligné à gauche */
+    width: 100%;  /* Largeur de 100% du menu */
+    text-align: center;  /* Centrer le texte */
+    padding: 10px 0;  /* Espacement vertical autour du texte */
+    background-color: #f4f4f4;  /* Fond clair pour le lien */
+    color: #333;  /* Texte sombre */
+    text-decoration: none;  /* Retrait du souligné */
+}
+
+/* Effet de survol pour le lien "Retour à l'accueil" */
+.accueil-link:hover {
+    background-color: #ddd;  /* Fond légèrement plus foncé au survol */
+    color: #009999;  /* Couleur de texte au survol */
+}
+
+/* Navigation (Barre de navigation en bas à droite) */
+.navigation {
+    display: flex;  /* Utilisation de flexbox pour la disposition */
+    justify-content: space-between;  /* Espace entre les éléments */
+    align-items: center;  /* Alignement vertical centré */
+    position: fixed;  /* Positionnement fixe en bas de la page */
+    bottom: 10px;  /* Espacement de 10px du bas de la page */
+    right: 20px;  /* Espacement de 20px de la droite */
+    left: 320px;  /* Décalage pour ne pas empiéter sur le menu */
+    background-color: white;  /* Fond blanc pour la barre de navigation */
+    padding: 10px;  /* Espacement autour des éléments */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);  /* Ombre discrète en haut de la barre */
+    border-radius: 5px;  /* Coins arrondis pour un effet plus doux */
+}
+
+/* Style des boutons de navigation */
+.nav-button {
+    text-decoration: none;  /* Retrait du souligné par défaut des liens */
+    font-weight: bold;  /* Texte en gras */
+    color: #009999;  /* Couleur principale des boutons */
+    padding: 10px;  /* Espacement autour du texte du bouton */
+}
+
+/* Effet de survol sur les boutons de navigation */
+.nav-button:hover {
+    text-decoration: underline;  /* Ajout d'un souligné au survol pour indiquer l'interaction */
+}
+
+/* Style du numéro de page dans la navigation */
+.page-number {
+    font-weight: bold;  /* Texte en gras pour le numéro de la page */
+    color: #333;  /* Couleur sombre pour la lisibilité */
+}
