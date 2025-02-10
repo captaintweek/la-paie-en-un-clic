@@ -7,23 +7,37 @@
     <link rel="stylesheet" href="styles.css"> <!-- Ajout du fichier CSS -->
     <script>
         function loadMenu() {
-            fetch('menu-moncahierpaie.html')  // Correction du chemin du fichier menu
+            fetch('menu-moncahierpaie.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('menu-container').innerHTML = data;
                 })
                 .catch(error => console.error('Erreur lors du chargement du menu:', error));
         }
-        
-        window.onload = loadMenu;
+
+        function loadNavigation() {
+            fetch('navigation.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navigation-container').innerHTML = data;
+                })
+                .catch(error => console.error('Erreur lors du chargement de la navigation:', error));
+        }
+
+        window.onload = function () {
+            loadMenu(); // Chargement du menu
+            loadNavigation(); // Chargement de la navigation
+        };
     </script>
 </head>
 <body>
-    <div id="menu-container"></div> <!-- Assurer que cet élément est bien présent pour charger le menu -->
+    <div id="menu-container"></div> <!-- Conteneur pour charger dynamiquement le menu -->
     
     <div class="content-container">
         <h1>SMIC, PMSS et autres données utiles</h1>
         <p>Contenu de la section sur le SMIC et autres informations utiles.</p>
     </div>
+
+    <div id="navigation-container"></div> <!-- Conteneur pour charger dynamiquement la navigation -->
 </body>
 </html>
