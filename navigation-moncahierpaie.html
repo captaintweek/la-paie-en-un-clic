@@ -1,46 +1,5 @@
-<div class="navigation-container">
-    <button id="prev-btn" class="nav-btn">⬅ Précédent</button>
-    <span id="page-number">Page 1</span>
-    <button id="next-btn" class="nav-btn">Suivant ➡</button>
+<div class="navigation">
+    <a href="accueil.html" class="nav-button">⬅ Accueil</a>
+    <span class="page-number">Page 1/7</span>
+    <a href="110.sous-section-Elements-du-brut.html" class="nav-button">Suivant ➡</a>
 </div>
-
-<script>
-    // Liste des pages dans l'ordre
-    const pages = [
-        "100.sous-section-SMIC.html",
-        "110.sous-section-Elements-du-brut.html",
-        "120.sous-section-Cotisations.html",
-        "130.sous-section-Taxes-impots.html",
-        "140.sous-section-Salaries-en-situation.html",
-        "150.sous-section-Parametrage-DSN.html",
-        "160.sous-section-Effectifs.html"
-    ];
-
-    // Détecter la page actuelle
-    const currentPage = window.location.pathname.split('/').pop();
-    const currentIndex = pages.indexOf(currentPage);
-
-    // Mettre à jour le numéro de page
-    document.getElementById("page-number").textContent = `Page ${currentIndex + 1}`;
-
-    // Gestion des boutons
-    document.getElementById("prev-btn").addEventListener("click", function() {
-        if (currentIndex > 0) {
-            window.location.href = pages[currentIndex - 1];
-        }
-    });
-
-    document.getElementById("next-btn").addEventListener("click", function() {
-        if (currentIndex < pages.length - 1) {
-            window.location.href = pages[currentIndex + 1];
-        }
-    });
-
-    // Désactiver les boutons si nécessaire
-    if (currentIndex === 0) {
-        document.getElementById("prev-btn").disabled = true;
-    }
-    if (currentIndex === pages.length - 1) {
-        document.getElementById("next-btn").disabled = true;
-    }
-</script>
