@@ -69,3 +69,39 @@ body {
     color: #009999;
 }
 
+/* Navigation mon cahier paie container */
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Navigation  mon cahier paie  buttons */
+.nav-btn {
+    background-color: #009999;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Navigation  mon cahier paie  */
+.nav-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* numéros de pages  mon cahier paie  */
+#page-number {
+    font-weight: bold;
+    font-size: 18px;
+}
+
