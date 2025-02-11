@@ -9,6 +9,7 @@ body {
     text-align: center;
     color: #333;
     padding: 10px;
+    background-color: transparent; /* Enlève toute couleur de fond */
 }
 
 #input-area {
