@@ -1,22 +1,23 @@
-/* Style général du menu 04*/
+/* Style général du menu */
 #menu-container {
     background-color: #e0f7f3; /* Vert d'eau très clair */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Permet de positionner "Accueil" en bas */
+    position: fixed; /* Le menu reste fixe sur le côté gauche de l'écran */
+    top: 0;
+    left: 0;
     width: 300px; /* Limite la largeur du menu */
-    max-width: 30%; /* S'assure que le menu ne dépasse pas la largeur de la page */
-    height: 100vh; /* Hauteur de l'écran pour que le menu occupe toute la hauteur */
+    height: 100vh; /* Hauteur du menu sur toute la page */
     display: flex;
-    flex-direction: column; /* Pour empiler les éléments du menu verticalement */
-    justify-content: space-between; /* Pour étirer les éléments du menu et pousser "Accueil" en bas */
+    flex-direction: column; /* Empile les éléments du menu verticalement */
+    justify-content: flex-start; /* Le contenu est aligné en haut du menu */
 }
 
 /* Suppression des puces si le menu est dans une liste (ul ou ol) */
 #menu-container ul {
-    list-style-type: none; /* Retire les puces */
-    padding-left: 0; /* Enlève tout remplissage à gauche */
+    list-style-type: none; /* Enlève les puces */
+    padding-left: 0; /* Enlève le remplissage par défaut à gauche */
     margin: 0; /* Enlève les marges par défaut */
 }
 
@@ -43,7 +44,7 @@
 #menu-container #home-link {
     font-size: 14px;
     font-weight: normal;
-    margin-top: auto; /* Permet de pousser le lien "Accueil" en bas */
+    margin-top: auto; /* Pousse le lien "Accueil" en bas du menu */
     text-align: center; /* Centre le texte du lien */
     padding-bottom: 10px; /* Un peu d'espace en bas du menu */
 }
@@ -70,4 +71,19 @@
 
 .navigation .page-number {
     color: #00796b;
+}
+
+/* Conteneur principal de la page */
+#content {
+    margin-left: 320px; /* Décale le contenu de la page à droite du menu */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond pour le contenu */
+    height: 100vh;
+    overflow-y: auto; /* Permet de scroller si nécessaire */
+}
+
+/* Style du contenu spécifique à la sous-section */
+#page-content {
+    font-size: 18px;
+    color: #333;
 }
