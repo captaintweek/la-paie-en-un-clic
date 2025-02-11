@@ -1,5 +1,48 @@
 <div class="navigation">
-    <a href="01.accueil.html" class="nav-button">⬅ Accueil</a>
-    <span class="page-number">Page 1/12</span>
-    <a href="110.sous-section-Elements-du-brut.html" class="nav-button">Suivant ➡</a>
+    <!-- Flèche Précédente -->
+    <a href="#" class="nav-button" id="prev-page">⬅ Précédent</a>
+
+    <!-- Affichage du numéro de la page -->
+    <span class="page-number" id="page-number">Page 1/12</span>
+
+    <!-- Flèche Suivante -->
+    <a href="#" class="nav-button" id="next-page">Suivant ➡</a>
 </div>
+
+<script>
+    // Variables de gestion des pages
+    const totalPages = 12; // Nombre total de pages
+    let currentPage = 1; // Page actuelle (commence à 1)
+
+    // Fonction pour mettre à jour la page
+    function updateNavigation() {
+        // Mettre à jour le texte du numéro de la page
+        document.getElementById("page-number").textContent = `Page ${currentPage}/${totalPages}`;
+
+        // Activer/Désactiver les liens "Précédent" et "Suivant" en fonction de la page courante
+        document.getElementById("prev-page").href = currentPage > 1 ? `${currentPage - 1}.sous-section.html` : "#";
+        document.getElementById("next-page").href = currentPage < totalPages ? `${currentPage + 1}.sous-section.html` : "#";
+
+        // Empêcher de naviguer si on est à la première ou dernière page
+        document.getElementById("prev-page").classList.toggle("disabled", currentPage <= 1);
+        document.getElementById("next-page").classList.toggle("disabled", currentPage >= totalPages);
+    }
+
+    // Appeler la fonction pour initialiser la navigation
+    updateNavigation();
+
+    // Écouteurs d'événements pour gérer les clics sur les flèches
+    document.getElementById("prev-page").addEventListener("click", function(e) {
+        if (currentPage > 1) {
+            currentPage--;
+            updateNavigation();
+        }
+    });
+
+    document.getElementById("next-page").addEventListener("click", function(e) {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateNavigation();
+        }
+    });
+</script>
