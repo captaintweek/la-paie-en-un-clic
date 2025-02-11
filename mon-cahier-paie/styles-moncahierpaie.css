@@ -1,3 +1,5 @@
+/* maj 01 */
+
 /* Style général du menu */
 #menu-container {
     background-color: #e0f7f3; /* Vert d'eau très clair */
@@ -6,7 +8,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative; /* Pour permettre de positionner "Accueil" en bas */
     width: 300px; /* Limite la largeur du menu */
-    max-width: 100%; /* S'assure que le menu ne dépasse pas la largeur de la page */
+    max-width: 30%; /* S'assure que le menu ne dépasse pas la largeur de la page */
 }
 
 /* Style des liens du menu */
