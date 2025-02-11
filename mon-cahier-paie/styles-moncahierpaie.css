@@ -75,15 +75,8 @@
 
 /* Conteneur principal de la page */
 #content {
-    margin-left: 320px; /* Décale le contenu de la page à droite du menu */
+    margin-left: 350px; /* Augmenté pour plus d'espace entre le menu et le contenu */
     padding: 20px;
     background-color: #f9f9f9; /* Fond pour le contenu */
     height: 100vh;
-    overflow-y: auto; /* Permet de scroller si nécessaire */
-}
-
-/* Style du contenu spécifique à la sous-section */
-#page-content {
-    font-size: 18px;
-    color: #333;
-}
+    overflow-y: auto; /* Permet de scroller si
