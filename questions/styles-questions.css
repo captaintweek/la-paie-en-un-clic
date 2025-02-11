@@ -48,8 +48,8 @@ button {
 
 .postit .close-btn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    bottom: 5px;
+    left: 5px;
     cursor: pointer;
     font-size: 20px;
     color: red;
@@ -65,7 +65,7 @@ button {
 .postit input[type="checkbox"] {
     position: absolute;
     top: 5px;
-    right: 30px;
+    right: 5px;
 }
 
 .striked-through {
