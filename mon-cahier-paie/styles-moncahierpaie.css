@@ -1,1 +1,91 @@
+/* styles-moncahierpaie.css */
+
+/* Menu fixe à gauche */
+#menu-container {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #f4f4f4;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+#content {
+    margin-left: 270px; /* Marge pour laisser de l'espace au menu */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Style du menu */
+#menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu li {
+    margin: 10px 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 16px;
+    display: block;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+#menu li a:hover {
+    background-color: #ccc;
+}
+
+/* Style pour la navigation */
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+/* Contenu principal */
+#page-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#page-content h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#page-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Ajouter un fond léger aux sections */
+#page-content section {
+    background-color: #fafafa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
 
