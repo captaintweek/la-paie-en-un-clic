@@ -1,67 +1,73 @@
-/* maj 02 */
-
-/* Style général du menu */
+/* Style général du menu 04*/
 #menu-container {
-    background-color: #e0f7f3; /* Vert d'eau très clair pour l'arrière-plan */
-    padding: 20px; /* Espacement interne autour du contenu du menu */
-    border-radius: 8px; /* Coins arrondis pour un effet de style */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile autour du menu */
-    position: relative; /* Nécessaire pour positionner "Accueil" en bas du menu */
-    width: 300px; /* Largeur fixe du menu */
-    max-width: 30%; /* Le menu occupe au maximum 30% de la largeur de la page */
-    display: flex; /* Utilise le modèle Flexbox pour l'alignement des éléments */
-    flex-direction: column; /* Les éléments du menu sont empilés verticalement */
-    justify-content: space-between; /* Crée de l'espace entre les éléments du menu (espacement automatique) */
+    background-color: #e0f7f3; /* Vert d'eau très clair */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Permet de positionner "Accueil" en bas */
+    width: 300px; /* Limite la largeur du menu */
+    max-width: 30%; /* S'assure que le menu ne dépasse pas la largeur de la page */
+    height: 100vh; /* Hauteur de l'écran pour que le menu occupe toute la hauteur */
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments du menu verticalement */
+    justify-content: space-between; /* Pour étirer les éléments du menu et pousser "Accueil" en bas */
 }
 
-/* Enlever les puces et rétrécir l'espace entre les liens */
+/* Suppression des puces si le menu est dans une liste (ul ou ol) */
+#menu-container ul {
+    list-style-type: none; /* Retire les puces */
+    padding-left: 0; /* Enlève tout remplissage à gauche */
+    margin: 0; /* Enlève les marges par défaut */
+}
+
+/* Style des liens du menu */
 #menu-container a {
-    text-decoration: none; /* Supprime les soulignements des liens */
-    color: #00796b; /* Couleur verte foncée pour les liens */
-    display: block; /* Chaque lien occupe toute la largeur disponible (en bloc) */
-    margin: 5px 0; /* Réduit l'espace vertical entre les liens (espacement entre les éléments) */
-    padding: 8px; /* Ajoute de l'espace autour du texte du lien */
-    font-size: 16px; /* Taille du texte des liens */
-    font-weight: bold; /* Met le texte des liens en gras */
-    border-radius: 4px; /* Arrondit les coins des liens pour un effet de style */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Ajoute un effet de transition pour la couleur de fond et du texte au survol */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #00796b; /* Couleur verte foncée pour le texte */
+    display: block;
+    margin: 5px 0; /* Réduit l'espace vertical entre les liens */
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Effet au survol des liens */
 #menu-container a:hover {
-    background-color: #00796b; /* Couleur de fond au survol du lien (vert foncé) */
-    color: #ffffff; /* Texte blanc lors du survol du lien */
+    background-color: #00796b; /* Vert foncé au survol */
+    color: #ffffff; /* Texte blanc au survol */
 }
 
-/* Positionner le lien "Accueil" en bas et le centrer */
+/* Positionner le lien "Accueil" en bas du menu et centré */
 #menu-container #home-link {
-    position: relative; /* Nécessaire pour positionner le lien correctement par rapport au parent */
-    margin-top: auto; /* Pousse le lien "Accueil" vers le bas du menu */
-    text-align: center; /* Centre le texte du lien "Accueil" horizontalement */
-    font-size: 14px; /* Taille du texte du lien "Accueil" */
-    font-weight: normal; /* Rétablit la police normale pour le lien "Accueil" */
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: auto; /* Permet de pousser le lien "Accueil" en bas */
+    text-align: center; /* Centre le texte du lien */
+    padding-bottom: 10px; /* Un peu d'espace en bas du menu */
 }
 
 /* Style pour la navigation */
 .navigation {
-    display: flex; /* Utilisation du modèle Flexbox pour la mise en page des boutons de navigation */
-    justify-content: space-between; /* Espace entre le bouton "Précédent" et "Suivant" */
-    align-items: center; /* Aligne verticalement les éléments de la barre de navigation */
-    margin: 20px 0; /* Marge verticale autour de la barre de navigation */
-    font-size: 18px; /* Taille du texte pour la navigation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 18px;
 }
 
 .navigation .nav-button {
-    text-decoration: none; /* Supprime le soulignement des liens de navigation */
-    color: #00796b; /* Couleur des boutons de navigation */
-    font-weight: bold; /* Texte en gras pour les boutons de navigation */
-    transition: color 0.3s ease; /* Transition pour la couleur au survol */
+    text-decoration: none;
+    color: #00796b;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .navigation .nav-button:hover {
-    color: #004d40; /* Changement de couleur du texte au survol du bouton (vert plus foncé) */
+    color: #004d40;
 }
 
 .navigation .page-number {
-    color: #00796b; /* Couleur du texte affichant le numéro de la page */
+    color: #00796b;
 }
