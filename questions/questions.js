@@ -82,4 +82,13 @@ function savePostits() {
 
 // Fonction pour charger les post-its à partir du localStorage
 function loadPostits() {
-    const postits = JSON.parse(localStorage
+    const postits = JSON.parse(localStorage.getItem("postits"));
+    if (postits) {
+        postits.forEach(postit => {
+            addPostit(postit.p, postit.x, postit.y, postit.color, postit.checkbox);
+        });
+    }
+}
+
+// Charger les post-its au démarrage
+window.onload = loadPostits;
