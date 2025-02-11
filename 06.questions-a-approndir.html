@@ -14,3 +14,29 @@
     .then(response => response.text())
     .then(data => document.getElementById("menu-container").innerHTML = data);
 </script>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page des Post-its</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header">
+        <h1>Question à approfondir</h1>
+    </div>
+
+    <div id="postits-container"></div>
+
+    <div id="input-area">
+        <textarea id="postit-text" placeholder="Tapez une note..."></textarea>
+        <button id="add-postit-btn">Ajouter Post-it</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
