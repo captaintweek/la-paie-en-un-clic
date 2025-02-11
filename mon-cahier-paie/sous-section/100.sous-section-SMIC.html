@@ -1,5 +1,3 @@
- 
-<!-- mon-cahier-paie/sous-section/100.sous-section-SMIC.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,7 +7,7 @@
     <link rel="stylesheet" href="../styles-moncahierpaie.css"> <!-- Chemin vers le fichier CSS -->
 </head>
 <body>
-    <!-- Charger le menu depuis un fichier externe -->
+    <!-- Conteneur pour le menu -->
     <div id="menu-container"></div>
     
     <!-- Contenu principal de la sous-section -->
@@ -21,17 +19,25 @@
         </div>
     </div>
     
-    <!-- Charger la navigation depuis un fichier externe -->
+    <!-- Conteneur pour la navigation -->
     <div id="navigation-container"></div>
 
     <script>
+        // Fonction pour charger dynamiquement un fichier HTML
+        function loadHTML(file, containerId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(containerId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erreur de chargement du fichier HTML:', error);
+                });
+        }
+
         // Charger dynamiquement le menu et la navigation
-        document.getElementById("menu-container").innerHTML = `
-            <object type="text/html" data="../menu-moncahierpaie.html" width="100%" height="100%"></object>
-        `;
-        document.getElementById("navigation-container").innerHTML = `
-            <object type="text/html" data="../navigation-moncahierpaie.html" width="100%" height="100%"></object>
-        `;
+        loadHTML('../menu-moncahierpaie.html', 'menu-container');
+        loadHTML('../navigation-moncahierpaie.html', 'navigation-container');
     </script>
 </body>
 </html>
