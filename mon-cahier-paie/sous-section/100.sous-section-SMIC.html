@@ -6,74 +6,18 @@
     <title>Mon Cahier Paie - SMIC</title>
     <link rel="stylesheet" href="../styles-moncahierpaie.css"> <!-- Chemin vers le fichier CSS -->
     
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        /* Menu de gauche */
-        #menu-container {
-            width: 250px;
-            background-color: #34495e;
-            color: white;
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-        }
-
-        /* Conteneur principal du contenu */
-        #content {
-            margin-left: 270px; /* Décale le contenu pour ne pas être sous le menu */
-            padding: 20px;
-            flex-grow: 1;
-        }
-
-        h1 {
-            background-color: #8bc34a;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        .info-box {
-            background-color: #e8f5e9;
-            padding: 10px;
-            border-left: 5px solid #4caf50;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: auto; /* Largeur s'adaptant au contenu */
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-            white-space: nowrap; /* Empêche les retours à la ligne dans les cellules */
-        }
-
-        th {
-            background-color: #c8e6c9;
-        }
-    </style>
 </head>
 <body>
-
     <!-- Conteneur pour le menu -->
     <div id="menu-container"></div>
+    
+    <!-- Début de la zone de contenu principal -->
+    <div id="content" class="content">
+        <div id="page-content">
 
-    <!-- CONTENU DEBUT ------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="content">
+
+    <!-------------------- Le contenu spécifique à la sous-section sera chargé ici -------------------------------------------------------------------------->
+
         <h1>SMIC, PMSS et autres données au 1er janvier 2025</h1>
 
         <div class="info-box">
@@ -139,7 +83,7 @@
     </div>
 
     <!-- CONTENU FIN ------------------------------------------------------------------------------------------------------------------------------- -->
-
+    
     <!-- Conteneur pour la navigation -->
     <div id="navigation-container"></div>
 
@@ -160,6 +104,5 @@
         loadHTML('../menu-moncahierpaie.html', 'menu-container');
         loadHTML('../navigation-moncahierpaie.html', 'navigation-container');
     </script>
-
 </body>
-</html>
+</html> 
