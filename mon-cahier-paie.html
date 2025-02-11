@@ -1,142 +1,65 @@
-<div id="menu-container"></div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Histoires & Podcasts</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation principale -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="histoires.html">Histoires</a></li>
+                <li><a href="histoires-audio.html">Histoires Audio</a></li>
+                <li><a href="podcasts.html">Podcasts</a></li>
+                <li><a href="avis.html">Donner un avis</a></li>
+                <li><a href="soumission.html">Soumettre une histoire</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Conteneur des sous-sections -->
-<div id="subsection-container">
-    <!-- Les tableaux seront insérés ici par JavaScript -->
-</div>
+    <!-- Section de présentation du projet -->
+    <section id="presentation">
+        <h1>Bienvenue sur Histoires & Podcasts</h1>
+        <p>Découvrez des histoires fascinantes et des podcasts captivants, organisés par thèmes.</p>
+    </section>
 
-<!-- Style CSS -->
-<style>
-    body {
-        background-image: url('images/feuilles.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        font-family: Arial, sans-serif;
-    }
+    <!-- Section des dernières histoires publiées -->
+    <section id="dernieres-histoires">
+        <h2>Dernières Histoires</h2>
+        <div class="histoires-container">
+            <!-- Exemple d'une histoire -->
+            <article class="histoire">
+                <h3>Titre de l'histoire</h3>
+                <p>Résumé court de l'histoire...</p>
+                <a href="#">Lire la suite</a>
+            </article>
+            <!-- Ajouter d'autres histoires ici -->
+        </div>
+    </section>
 
-    /* Grille pour organiser les sous-sections */
-    #subsection-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-        column-gap: 30px; /* Augmente l'espace horizontal entre les tableaux */
-        row-gap: 15px; /* Espace vertical inchangé */
-        padding: 20px;
-        max-width: 1600px;
-        margin: 20px auto; /* Réduit l'espace au-dessus des tableaux */
-    }
+    <!-- Section des podcasts récents -->
+    <section id="podcasts-recents">
+        <h2>Podcasts Récents</h2>
+        <div class="podcasts-container">
+            <!-- Exemple d'un podcast -->
+            <article class="podcast">
+                <h3>Épisode 1 : Nom du Podcast</h3>
+                <audio controls>
+                    <source src="assets/podcast1.mp3" type="audio/mpeg">
+                    Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+            </article>
+            <!-- Ajouter d'autres podcasts ici -->
+        </div>
+    </section>
 
-    /* Style des tableaux */
-    .subsection-table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        width: 100%; /* Ajuste la largeur selon tes besoins */
-        max-width: 350px; /* Empêche que les tableaux deviennent trop larges sur les grands écrans */
-    }
-
-    /* Style des cellules */
-    .subsection-table td {
-        padding: 15px;
-        text-align: center;
-        border: 1px solid #ddd;
-    }
-
-    /* Hauteur réduite pour la première ligne des tableaux (titres des sous-sections) */
-    .subsection-table tr:first-child td {
-        padding: 5px 12px; /* Réduit l'espace interne (haut et bas) des cellules */
-        height: 35px; /* Ajuste la hauteur spécifique de la ligne */
-        font-size: 14px; /* Optionnel : Ajuste la taille du texte si nécessaire */
-        background-color: #009999; /* Bleu-vert pour la première ligne */
-        color: #b37700; /* Texte en marron foncé */
-        font-weight: bold; /* Texte en gras */
-    }
-
-    /* Style des cellules de la deuxième ligne (contenu des sous-sections) */
-    .subsection-table tr:nth-child(2) td {
-        background-color: #e0f7fa; /* Vert d'eau très clair pour la deuxième ligne */
-    }
-
-    /* Hauteur des cellules des sous-sous-sections */
-    .subsection-content {
-        height: 120px; /* Ajuste selon tes besoins */
-    }
-
-    /* Lien hypertexte des sous-sections */
-    .subsection-title a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        display: block;
-        padding: 10px;
-    }
-
-    /* Effet au survol */
-    .subsection-title a:hover {
-        color: #d63384; /* Fuchsia */
-    }
-
-    /* Responsive pour tablette */
-    @media (max-width: 1024px) {
-        #subsection-container {
-            grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
-        }
-    }
-
-    /* Responsive pour mobile */
-    @media (max-width: 600px) {
-        #subsection-container {
-            grid-template-columns: repeat(1, 1fr); /* 1 colonne sur mobile */
-        }
-    }
-</style>
-
-<!-- Scripts JavaScript -->
-<script>
-    // Charger le menu depuis un fichier externe
-    fetch("en-tete/menu.html")
-    .then(response => response.text())
-    .then(data => document.getElementById("menu-container").innerHTML = data);
-
-    // Charger les sous-sections
-    document.addEventListener("DOMContentLoaded", function() {
-        const sections = [
-            { title: "SMIC, PMSS et autres données utiles", link: "mon-cahier-paie/sous-section/100.sous-section-SMIC.html" },
-            { title: "Éléments du brut", link: "mon-cahier-paie/sous-section/110.sous-section-Elements-du-brut.html" },
-            { title: "Cotisations sociales, retraite, mutuelle", link: "mon-cahier-paie/sous-section/120.sous-section-Cotisations.html" },
-            { title: "Taxes, impôts et autres cotisations", link: "mon-cahier-paie/sous-section/130.sous-section-Taxes-impots.html" },
-            { title: "Salariés en situations particulières", link: "mon-cahier-paie/sous-section/140.sous-section-Salaries-en-situation-non-salaries.html" },
-            { title: "Paramétrage DSN", link: "mon-cahier-paie/sous-section/150.sous-section-Parametrage-DSN.html" },
-            { title: "Effectifs", link: "mon-cahier-paie/sous-section/160.sous-section-Effectifs.html" },
-            { title: "Échéances et déclarations", link: "mon-cahier-paie/sous-section/170.sous-section-Echeances-declarations.html" },
-            { title: "Procédures sauvegarde, RJ, liquidation", link: "mon-cahier-paie/sous-section/180.sous-section-Procedures-sauvegarde-RJ-liquidation.html" },
-            { title: "Embauche du salarié", link: "mon-cahier-paie/sous-section/190.sous-section-Embauche-salarie.html" },
-            { title: "Sortie du salarié", link: "mon-cahier-paie/sous-section/200.sous-section-Sortie-salarie.html" },
-            { title: "Audits et contrôles", link: "mon-cahier-paie/sous-section/210.sous-section-Audits-controles.html" }
-        ];
-
-        const container = document.getElementById("subsection-container");
-
-        // Générer les tableaux des sous-sections
-        sections.forEach(section => {
-            const table = document.createElement("table");
-            table.classList.add("subsection-table");
-
-            // 1ère ligne : Titre de la sous-section
-            const titleRow = document.createElement("tr");
-            const titleCell = document.createElement("td");
-            titleCell.classList.add("subsection-title");
-            titleCell.innerHTML = `<a href="${section.link}">${section.title}</a>`;
-            titleRow.appendChild(titleCell);
-
-            // 2ème ligne : Sous-sous-sections (vide pour l’instant)
-            const subRow = document.createElement("tr");
-            const subCell = document.createElement("td");
-            subCell.classList.add("subsection-content");
-            subCell.textContent = ""; // Vide pour le moment
-            subRow.appendChild(subCell);
-
-            // Ajouter les lign
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Histoires & Podcasts. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
