@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+#input-area {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#postits-container {
+    position: relative;
+    padding-top: 80px;
+    padding-left: 10px;
+}
+
+.postit {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: lightyellow;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.postit input[type="checkbox"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.striked-through {
+    text-decoration: line-through;
+}
