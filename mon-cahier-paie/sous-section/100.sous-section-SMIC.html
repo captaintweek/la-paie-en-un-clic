@@ -10,81 +10,121 @@
 <body>
     <!-- Conteneur pour le menu -->
     <div id="menu-container"></div>
-    
+
+    <!-- début du contenu --------------------------------------------------------------------------------------------------------------------------->
     <!-- Début de la zone de contenu principal -->
     <div id="content" class="content">
         <div id="page-content">
-        <!-------------------- Le contenu spécifique à la sous-section sera chargé ici -------------------------------------------------------------------------->
-            <!-- Le contenu spécifique à la sous-section sera chargé ici -->
-            <h1>SMIC, PMSS et autres données au 1er janvier 2025</h1>
-            <p>
-                <br>Absence de budget pour 2025 : Le PLFSS et le PLF pour 2025 n'ont pas été adoptés, retardant la fixation de certains paramètres paie. Le gouvernement espère un vote vers mi-février.
-                <br>Paramètres déjà connus : Plusieurs taux et plafonds applicables à partir du 1er janvier 2025 sont confirmés.
-                <br><strong>Activité partielle et APLD</strong>
-                <br>Activité partielle :
-                <ul>
-                    <li>Allocation minimale employeur : 8,46 €/h</li>
-                    <li>Indemnité minimale salarié : 9,40 €/h</li>
-                    <li>Plafond employeur : 19,25 €/h (36 % de 4,5 Smic)</li>
-                    <li>Plafond salarié : 32,08 €/h (60 % de 4,5 Smic)</li>
-                </ul>
-                <br>Activité partielle de longue durée (APLD) :
-                <ul>
-                    <li>Allocation minimale employeur : 9,40 €/h (max 60 % de 4,5 Smic = 32,08 €/h)</li>
-                    <li>Indemnité minimale salarié : 9,40 €/h (max 70 % de 4,5 Smic = 37,42 €/h)</li>
-                </ul>
-                <br><strong>Bons d’achat du CSE</strong>
-                <br>Exonération de cotisations pour une valeur annuelle ≤ 196 € par bénéficiaire.
-                <br><strong>Cotisations sociales</strong>
-                <ul>
-                    <li>AGS : Taux maintenu à 0,25 %.</li>
-                    <li>Intempéries BTP : 
-                        <ul>
-                            <li>0,68 % (gros œuvre et travaux publics)</li>
-                            <li>0,13 % (autres entreprises du BTP)</li>
-                        </ul>
-                    </li>
-                    <li>OPPBTP : Maintien du taux à 0,11 %.</li>
-                    <li>Maladie Alsace-Moselle : Taux maintenu à 1,30 %.</li>
-                    <li>Exonérations sociales : Maintien des règles en vigueur en attendant un nouveau budget.</li>
-                </ul>
-                <br><strong>Frais professionnels</strong>
-                <ul>
-                    <li>Indemnités forfaitaires repas :
-                        <ul>
-                            <li>Restaurant : 21,10 €</li>
-                            <li>Restauration sur lieu de travail : 7,40 €</li>
-                            <li>Restauration hors entreprise : 10,30 €</li>
-                        </ul>
-                    </li>
-                    <li>Frais de transport
-                        <ul>
-                            <li>Prime carburant : Plafond d’exonération abaissé à 300 €/an.</li>
-                            <li>Prime recharge véhicule électrique : Plafond réduit à 600 €/an.</li>
-                            <li>Forfait mobilités durables + transports publics : Plafond relevé à 900 €/an.</li>
-                        </ul>
-                    </li>
-                    <li>Avantages en nature véhicules électriques :
-                        <ul>
-                            <li>Prolongation des modalités dérogatoires (arrêté à venir).</li>
-                            <li>Abattement de 50 % des dépenses prises en charge par l’employeur dans la limite de 2 000,30 €.</li>
-                        </ul>
-                    </li>
-                    <li>Borne de recharge domicile salarié :
-                        <ul>
-                            <li>Prise en charge exonérée à 50 % des frais réels, avec un plafond de 1 043,50 €.</li>
-                            <li>Si la borne a plus de 5 ans, exonération portée à 75 % des frais réels, plafond de 1 565,20 €.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <br>→ D’autres ajustements sont attendus après l’adoption du budget 2025.
-            </p>
-        </div>
-    </div>
-    
+<style>
+    /* Style du titre */
+    h1 {
+        background-color: #8BC34A; /* Vert pomme foncé */
+        color: white;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
 
-    <!-------------------- Fin de la zone de contenu principal------------------------- -------------------------------------------------------------------------->
-        
+    /* Style des tableaux */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #C5E1A5; /* Vert clair */
+    }
+
+    /* Espacement entre sections */
+    .section {
+        margin-bottom: 30px;
+    }
+</style>
+
+<h1>SMIC, PMSS et autres données au 1er janvier 2025</h1>
+
+<div class="section">
+    <p><strong>Absence de budget pour 2025 :</strong> Le PLFSS et le PLF pour 2025 n'ont pas été adoptés, retardant la fixation de certains paramètres paie. Le gouvernement espère un vote vers mi-février.</p>
+    <p><strong>Paramètres déjà connus :</strong> Plusieurs taux et plafonds applicables à partir du 1er janvier 2025 sont confirmés.</p>
+</div>
+
+<div class="section">
+    <h2>Activité partielle et APLD</h2>
+    <table>
+        <tr><th>Type</th><th>Montant</th></tr>
+        <tr><td>Allocation minimale employeur</td><td>8,46 €/h</td></tr>
+        <tr><td>Indemnité minimale salarié</td><td>9,40 €/h</td></tr>
+        <tr><td>Plafond employeur</td><td>19,25 €/h (36 % de 4,5 Smic)</td></tr>
+        <tr><td>Plafond salarié</td><td>32,08 €/h (60 % de 4,5 Smic)</td></tr>
+    </table>
+    
+    <h3>Activité partielle de longue durée (APLD)</h3>
+    <table>
+        <tr><th>Type</th><th>Montant</th></tr>
+        <tr><td>Allocation minimale employeur</td><td>9,40 €/h (max 60 % de 4,5 Smic = 32,08 €/h)</td></tr>
+        <tr><td>Indemnité minimale salarié</td><td>9,40 €/h (max 70 % de 4,5 Smic = 37,42 €/h)</td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Bons d'achat du CSE</h2>
+    <p>Exonération de cotisations pour une valeur annuelle ≤ 196 € par bénéficiaire.</p>
+</div>
+
+<div class="section">
+    <h2>Cotisations sociales</h2>
+    <table>
+        <tr><th>Type</th><th>Taux</th></tr>
+        <tr><td>AGS</td><td>0,25 %</td></tr>
+        <tr><td>Intempéries BTP (gros œuvre & travaux publics)</td><td>0,68 %</td></tr>
+        <tr><td>Intempéries BTP (autres entreprises)</td><td>0,13 %</td></tr>
+        <tr><td>OPPBTP</td><td>0,11 %</td></tr>
+        <tr><td>Maladie Alsace-Moselle</td><td>1,30 %</td></tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>Frais professionnels</h2>
+    <h3>Indemnités forfaitaires repas</h3>
+    <table>
+        <tr><th>Type</th><th>Montant</th></tr>
+        <tr><td>Restaurant</td><td>21,10 €</td></tr>
+        <tr><td>Restauration sur lieu de travail</td><td>7,40 €</td></tr>
+        <tr><td>Restauration hors entreprise</td><td>10,30 €</td></tr>
+    </table>
+    
+    <h3>Frais de transport</h3>
+    <table>
+        <tr><th>Type</th><th>Plafond</th></tr>
+        <tr><td>Prime carburant</td><td>300 €/an</td></tr>
+        <tr><td>Prime recharge véhicule électrique</td><td>600 €/an</td></tr>
+        <tr><td>Forfait mobilités durables + transports publics</td><td>900 €/an</td></tr>
+    </table>
+    
+    <h3>Avantages en nature véhicules électriques</h3>
+    <table>
+        <tr><th>Type</th><th>Montant</th></tr>
+        <tr><td>Abattement des dépenses prises en charge</td><td>50 % dans la limite de 2 000,30 €</td></tr>
+    </table>
+    
+    <h3>Borne de recharge domicile salarié</h3>
+    <table>
+        <tr><th>Ancienneté de la borne</th><th>Exonération</th><th>Plafond</th></tr>
+        <tr><td>Moins de 5 ans</td><td>50 % des frais réels</td><td>1 043,50 €</td></tr>
+        <tr><td>Plus de 5 ans</td><td>75 % des frais réels</td><td>1 565,20 €</td></tr>
+    </table>
+</div>
+
+<p>→ D’autres ajustements sont attendus après l’adoption du budget 2025.</p>
+<!-- fin du contenu --------------------------------------------------------------------------------------------------------------------------->
+
+            
     <!-- Conteneur pour la navigation -->
     <div id="navigation-container"></div>
 
