@@ -46,10 +46,26 @@ button {
     border-radius: 5px;
 }
 
-.postit input[type="checkbox"] {
+.postit .close-btn {
     position: absolute;
     top: 5px;
     right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.postit .close-btn:hover {
+    color: darkred;
+}
+
+.postit input[type="checkbox"] {
+    position: absolute;
+    top: 5px;
+    right: 30px;
 }
 
 .striked-through {
