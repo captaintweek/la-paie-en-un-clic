@@ -3,45 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Cahier Paie - SMIC</title>
+    <title>Les éléments dans le brut - SMIC</title>
     <link rel="stylesheet" href="../styles-moncahierpaie.css"> <!-- Chemin vers le fichier CSS -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 20px;
+            margin-top: 0;
+            padding-top: 10px;
+            font-style: italic; /* Titre en italique */
+        }
+        .pdf-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 5px; /* Décalage pour remonter le PDF */
+        }
+        canvas {
+            border: 1px solid #ddd;
+            display: block;
+            width: 65%;  /* Réduction de la largeur du PDF */
+            max-width: 1000px; /* Limite maximale de la largeur */
+            margin: 5px 0;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .nav-buttons button {
+            font-size: 18px; /* Taille plus grande pour les flèches */
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- Conteneur pour le menu -->
     <div id="menu-container"></div>
-    
+
     <!-- Début de la zone de contenu principal -->
     <div id="content" class="content">
         <div id="page-content">
-            <!-------------------- Le contenu spécifique à la sous-section sera chargé ici -------------------------------------------------------------------------->
-            <!-- Le contenu spécifique à la sous-section sera chargé ici -->
-            <h1>Les cotisations de sécurité sociale, de retraite, prévoyance, mutuelle</h1>
-<ul>
-    <li>Cotisation sécurité sociale (maladie, maternité, invalidité, décès)</li>
-    <li>Cotisation retraite de base</li>
-    <li>Cotisation retraite complémentaire</li>
-    <li>Cotisation chômage</li>
-    <li>Cotisation CSG/CRDS</li>
-    <li>Cotisation pour la formation professionnelle</li>
-    <li>Autres cotisations spécifiques (selon le statut et le contrat de travail)</li>
-    <li>Réduction générale de cotisation</li>
-    <li>LODEOM (Loi pour le développement économique des Outre-Mer)</li>
-    <li>Prévoyance et mutuelle</li>
-    <li>Retraite supplémentaire</li>
-    <li>Exonération pour heures supplémentaires</li>
-    <li>Forfait social</li>
-    <li>Réintégration sociale</li>
-</ul>
+            <h1>Les éléments dans le brut</h1>
 
+            <!-- Conteneur du PDF avec les flèches de navigation -->
+            <div class="pdf-container">
+                <!-- Affichage du PDF -->
+                <canvas id="pdf-canvas"></canvas>
+
+                <!-- Boutons de navigation PDF -->
+                <div class="nav-buttons">
+                    <button onclick="previousPDF()">⬅</button>
+                    <button onclick="nextPDF()">➡</button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Fin de la zone de contenu principal -->
-
-    <!-------------------- Fin de la zone de contenu principal------------------------- -------------------------------------------------------------------------->
-    
-    <!-- Conteneur pour la navigation -->
-    <div id="navigation-container"></div>
 
     <script>
         // Fonction pour charger dynamiquement un fichier HTML
@@ -56,9 +89,66 @@
                 });
         }
 
-        // Charger dynamiquement le menu et la navigation
+        // Charger dynamiquement le menu
         loadHTML('../menu-moncahierpaie.html', 'menu-container');
-        loadHTML('../navigation-moncahierpaie.html', 'navigation-container');
+
+        // Gestion des PDFs
+        const pdfPath = "PDF/";  // Chemin relatif vers le dossier PDF
+        const pdfFiles = ["PAIE100.pdf", "PAIE101.pdf", "PAIE102.pdf", "PAIE103.pdf", "PAIE104.pdf", "PAIE105.pdf", "PAIE106.pdf", "PAIE107.pdf", "PAIE108.pdf", "PAIE109.pdf",
+        "PAIE110.pdf", "PAIE111.pdf", "PAIE112.pdf", "PAIE113.pdf", "PAIE114.pdf", "PAIE115.pdf", "PAIE116.pdf", "PAIE117.pdf", "PAIE118.pdf", "PAIE119.pdf",
+        "PAIE120.pdf", "PAIE121.pdf", "PAIE122.pdf", "PAIE123.pdf", "PAIE124.pdf", "PAIE125.pdf", "PAIE126.pdf", "PAIE127.pdf", "PAIE128.pdf", "PAIE129.pdf",
+        "PAIE130.pdf", "PAIE131.pdf", "PAIE132.pdf", "PAIE133.pdf", "PAIE134.pdf", "PAIE135.pdf", "PAIE136.pdf", "PAIE137.pdf", "PAIE138.pdf", "PAIE139.pdf",
+        "PAIE140.pdf", "PAIE141.pdf", "PAIE142.pdf", "PAIE143.pdf", "PAIE144.pdf", "PAIE145.pdf", "PAIE146.pdf", "PAIE147.pdf", "PAIE148.pdf", "PAIE149.pdf",
+        "PAIE150.pdf", "PAIE151.pdf", "PAIE152.pdf", "PAIE153.pdf", "PAIE154.pdf", "PAIE155.pdf", "PAIE156.pdf", "PAIE157.pdf", "PAIE158.pdf", "PAIE159.pdf",
+        "PAIE160.pdf", "PAIE161.pdf", "PAIE162.pdf", "PAIE163.pdf", "PAIE164.pdf", "PAIE165.pdf", "PAIE166.pdf", "PAIE167.pdf", "PAIE168.pdf", "PAIE169.pdf",
+        "PAIE170.pdf", "PAIE171.pdf", "PAIE172.pdf", "PAIE173.pdf", "PAIE174.pdf", "PAIE175.pdf", "PAIE176.pdf", "PAIE177.pdf", "PAIE178.pdf", "PAIE179.pdf",
+        "PAIE180.pdf", "PAIE181.pdf", "PAIE182.pdf", "PAIE183.pdf", "PAIE184.pdf", "PAIE185.pdf", "PAIE186.pdf", "PAIE187.pdf", "PAIE188.pdf", "PAIE189.pdf",
+        "PAIE190.pdf", "PAIE191.pdf", "PAIE192.pdf", "PAIE193.pdf", "PAIE194.pdf", "PAIE195.pdf", "PAIE196.pdf", "PAIE197.pdf", "PAIE198.pdf", "PAIE199.pdf"]; // Noms des fichiers
+        let currentPdfIndex = 0;
+
+        const canvas = document.getElementById("pdf-canvas");
+        const ctx = canvas.getContext("2d");
+
+        function loadPDF(index) {
+            if (index < 0 || index >= pdfFiles.length) return;
+            
+            const url = pdfPath + pdfFiles[index];
+
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                return pdf.getPage(1);
+            }).then(page => {
+                const scale = 1; // Augmenter le scale pour améliorer la qualité
+                const viewport = page.getViewport({ scale: scale });
+                
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            }).catch(error => {
+                console.error("Erreur lors du chargement du PDF : ", error);
+            });
+        }
+
+        function previousPDF() {
+            if (currentPdfIndex > 0) {
+                currentPdfIndex--;
+                loadPDF(currentPdfIndex);
+            }
+        }
+
+        function nextPDF() {
+            if (currentPdfIndex < pdfFiles.length - 1) {
+                currentPdfIndex++;
+                loadPDF(currentPdfIndex);
+            }
+        }
+
+        // Charger le premier PDF au démarrage
+        loadPDF(currentPdfIndex);
     </script>
 </body>
-</html> 
+</html>
