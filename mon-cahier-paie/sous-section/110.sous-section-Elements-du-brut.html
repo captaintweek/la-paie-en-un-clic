@@ -17,6 +17,7 @@
             font-size: 20px;
             margin-top: 0;
             padding-top: 10px;
+            font-style: italic; /* Titre en italique */
         }
         .pdf-container {
             display: flex;
@@ -28,7 +29,7 @@
         canvas {
             border: 1px solid #ddd;
             display: block;
-            width: 90%;  /* Augmentation de la largeur du PDF */
+            width: 80%;  /* Réduction de la largeur du PDF */
             max-width: 1200px; /* Limite maximale de la largeur */
             margin: 10px 0;
         }
@@ -42,7 +43,7 @@
             padding: 0 20px;
         }
         .nav-buttons button {
-            font-size: 14px; /* Réduction de la taille des flèches */
+            font-size: 18px; /* Taille plus grande pour les flèches */
             padding: 6px 12px;
             cursor: pointer;
             background-color: #f0f0f0;
@@ -67,8 +68,8 @@
 
                 <!-- Boutons de navigation PDF -->
                 <div class="nav-buttons">
-                    <button onclick="previousPDF()">⬅ Précédent</button>
-                    <button onclick="nextPDF()">Suivant ➡</button>
+                    <button onclick="previousPDF()">⬅</button>
+                    <button onclick="nextPDF()">➡</button>
                 </div>
             </div>
         </div>
