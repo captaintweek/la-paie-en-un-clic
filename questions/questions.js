@@ -3,6 +3,27 @@ const GITHUB_REPO = "TON_REPO";
 const GITHUB_PATH = "questions/postits.json";
 const GITHUB_TOKEN = "TON_TOKEN"; // 🚨 Ne pas exposer ce token publiquement !
 
+async function loadPostitsFromGitHub() {
+    const url = "https://raw.githubusercontent.com/captaintweek/la-paie-en-un-clic/main/questions/postits.json";
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Impossible de récupérer les post-its depuis GitHub");
+
+        const postits = await response.json();
+        postits.forEach(postit => {
+            addPostit(postit.p, postit.x, postit.y, postit.color, postit.checkbox);
+        });
+
+    } catch (error) {
+        console.error("Erreur lors du chargement des post-its :", error);
+    }
+}
+
+// Charger les post-its depuis GitHub au démarrage
+window.onload = loadPostitsFromGitHub;
+
+
 // Bouton d'ajout de post-it
 document.getElementById("add-postit-btn").addEventListener("click", function() {
     const text = document.getElementById("postit-text").value;
