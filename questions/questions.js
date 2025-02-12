@@ -54,6 +54,54 @@ function addPostit(text, x = null, y = null, color = null, checked = false) {
         savePostits();
     });
 
+    async function savePostitsToGitHub() {
+    const postits = [];
+    document.querySelectorAll(".postit").forEach(postit => {
+        const p = postit.querySelector("p").textContent;
+        const checkbox = postit.querySelector("input[type='checkbox']").checked;
+        const color = postit.style.backgroundColor;
+        const x = parseInt(postit.style.left);
+        const y = parseInt(postit.style.top);
+
+        postits.push({ p, x, y, color, checkbox });
+    });
+
+    const githubToken = "TON_TOKEN_GITHUB"; // ⚠ Ne mets jamais ça en public !
+    const repo = "captaintweek/la-paie-en-un-clic";
+    const filePath = "questions/postits.json";
+    const url = `https://api.github.com/repos/${repo}/contents/${filePath}`;
+
+    try {
+        // Récupérer le SHA du fichier existant
+        const getFileResponse = await fetch(url, { headers: { Authorization: `token ${githubToken}` } });
+        const fileData = await getFileResponse.json();
+        const sha = fileData.sha;
+
+        // Préparer les données
+        const data = {
+            message: "Mise à jour des post-its",
+            content: btoa(JSON.stringify(postits, null, 2)), // Convertir en base64
+            sha: sha
+        };
+
+        // Envoyer la mise à jour à GitHub
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Authorization": `token ${githubToken}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) throw new Error("Erreur lors de la sauvegarde des post-its");
+
+    } catch (error) {
+        console.error("Erreur lors de la sauvegarde :", error);
+    }
+}
+
+
     postit.style.backgroundColor = color || getRandomColor();
     postit.style.left = `${x || Math.floor(Math.random() * (window.innerWidth - 220))}px`;
     postit.style.top = `${y || Math.floor(Math.random() * (window.innerHeight - 300))}px`;
