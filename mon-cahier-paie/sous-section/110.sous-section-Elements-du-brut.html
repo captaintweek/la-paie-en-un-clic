@@ -117,7 +117,7 @@
             pdfjsLib.getDocument(url).promise.then(pdf => {
                 return pdf.getPage(1);
             }).then(page => {
-                const viewport = page.getViewport({ scale: 1.5 });
+                const viewport = page.getViewport({ scale: 1 });
                 canvas.width = viewport.width;
                 canvas.height = viewport.height;
 
