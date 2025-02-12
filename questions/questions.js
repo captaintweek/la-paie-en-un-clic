@@ -1,7 +1,7 @@
 const GITHUB_USER = "captaintweek";
 const GITHUB_REPO = "la-paie-en-un-clic";
 const GITHUB_PATH = "questions/postits.json";
-const GITHUB_TOKEN = "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"; // ⚠ Ne JAMAIS exposer ce token publiquement !
+const GITHUB_TOKEN = "tt"; // ⚠ Ne JAMAIS exposer ce token publiquement !
 
 async function savePostits() {
     const postits = [];
