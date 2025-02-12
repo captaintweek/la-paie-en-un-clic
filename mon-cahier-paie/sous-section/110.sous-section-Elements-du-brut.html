@@ -11,18 +11,27 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+        .pdf-container {
+            position: relative;
+            display: inline-block;
+        }
         canvas {
             border: 1px solid #ddd;
             margin: 10px auto;
             display: block;
         }
         .nav-buttons {
-            margin-top: 10px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
         button {
             font-size: 18px;
             padding: 10px;
-            margin: 5px;
+            margin: 0 10px;
             cursor: pointer;
         }
     </style>
@@ -36,13 +45,15 @@
         <div id="page-content">
             <h1>Les éléments dans le brut</h1>
 
-            <!-- Affichage du PDF -->
-            <canvas id="pdf-canvas"></canvas>
+            <!-- Conteneur du PDF avec les boutons à gauche et à droite -->
+            <div class="pdf-container">
+                <canvas id="pdf-canvas"></canvas>
 
-            <!-- Boutons de navigation PDF -->
-            <div class="nav-buttons">
-                <button onclick="previousPDF()">⬅ Précédent</button>
-                <button onclick="nextPDF()">Suivant ➡</button>
+                <!-- Boutons de navigation PDF -->
+                <div class="nav-buttons">
+                    <button onclick="previousPDF()">⬅ Précédent</button>
+                    <button onclick="nextPDF()">Suivant ➡</button>
+                </div>
             </div>
         </div>
     </div>
