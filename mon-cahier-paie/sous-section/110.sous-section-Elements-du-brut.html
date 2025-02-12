@@ -5,37 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Cahier Paie - SMIC</title>
     <link rel="stylesheet" href="../styles-moncahierpaie.css"> <!-- Chemin vers le fichier CSS -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px auto;
+            display: block;
+        }
+        .nav-buttons {
+            margin-top: 10px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <!-- Conteneur pour le menu -->
     <div id="menu-container"></div>
-    
+
     <!-- Début de la zone de contenu principal -->
     <div id="content" class="content">
         <div id="page-content">
-            <!-------------------- Le contenu spécifique à la sous-section sera chargé ici -------------------------------------------------------------------------->
-            <!-- Le contenu spécifique à la sous-section sera chargé ici -->
-            <h1>Les élements dans du brut</h1>
-            <ul>
-    <li>Salaire de base</li>
-    <li>Heures supplémentaires</li>
-    <li>Primes</li>
-    <li>Indemnités</li>
-    <li>Retenues pour absences</li>
-    <li>Cotisations sociales</li>
-    <li>Salaire net avant impôt</li>
-    <li>Impôt sur le revenu (le cas échéant)</li>
-    <li>Salaire net à payer</li>
-</ul>
+            <h1>Les éléments dans le brut</h1>
+
+            <!-- Affichage du PDF -->
+            <canvas id="pdf-canvas"></canvas>
+
+            <!-- Boutons de navigation PDF -->
+            <div class="nav-buttons">
+                <button onclick="previousPDF()">⬅ Précédent</button>
+                <button onclick="nextPDF()">Suivant ➡</button>
+            </div>
         </div>
     </div>
     <!-- Fin de la zone de contenu principal -->
-
-    <!-------------------- Fin de la zone de contenu principal------------------------- -------------------------------------------------------------------------->
-    
-    <!-- Conteneur pour la navigation -->
-    <div id="navigation-container"></div>
 
     <script>
         // Fonction pour charger dynamiquement un fichier HTML
@@ -50,9 +61,55 @@
                 });
         }
 
-        // Charger dynamiquement le menu et la navigation
+        // Charger dynamiquement le menu
         loadHTML('../menu-moncahierpaie.html', 'menu-container');
-        loadHTML('../navigation-moncahierpaie.html', 'navigation-container');
+
+        // Gestion des PDFs
+        const pdfPath = "../sous-section/110.sous-section-Elements-du-brut/"; // Dossier contenant les PDFs
+        const pdfFiles = ["PAIE000.pdf", "PAIE001.pdf", "PAIE002.pdf"]; // Noms des fichiers
+        let currentPdfIndex = 0;
+
+        const canvas = document.getElementById("pdf-canvas");
+        const ctx = canvas.getContext("2d");
+
+        function loadPDF(index) {
+            if (index < 0 || index >= pdfFiles.length) return;
+            
+            const url = pdfPath + pdfFiles[index];
+
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                return pdf.getPage(1);
+            }).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            }).catch(error => {
+                console.error("Erreur lors du chargement du PDF : ", error);
+            });
+        }
+
+        function previousPDF() {
+            if (currentPdfIndex > 0) {
+                currentPdfIndex--;
+                loadPDF(currentPdfIndex);
+            }
+        }
+
+        function nextPDF() {
+            if (currentPdfIndex < pdfFiles.length - 1) {
+                currentPdfIndex++;
+                loadPDF(currentPdfIndex);
+            }
+        }
+
+        // Charger le premier PDF au démarrage
+        loadPDF(currentPdfIndex);
     </script>
 </body>
-</html> 
+</html>
