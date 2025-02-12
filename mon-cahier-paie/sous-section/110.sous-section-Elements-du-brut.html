@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Cahier Paie - SMIC</title>
+    <title>Les éléments dans le brut - SMIC</title>
     <link rel="stylesheet" href="../styles-moncahierpaie.css"> <!-- Chemin vers le fichier CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 20px;
+            margin-top: 0;
+            padding-top: 10px;
         }
         .pdf-container {
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            margin-top: 10px; /* Décalage pour remonter le PDF */
         }
         canvas {
             border: 1px solid #ddd;
-            margin: 10px;
             display: block;
+            width: 90%;  /* Augmentation de la largeur du PDF */
+            max-width: 1200px; /* Limite maximale de la largeur */
+            margin: 10px 0;
         }
         .nav-buttons {
             position: absolute;
@@ -32,9 +42,12 @@
             padding: 0 20px;
         }
         .nav-buttons button {
-            font-size: 18px;
-            padding: 10px;
+            font-size: 14px; /* Réduction de la taille des flèches */
+            padding: 6px 12px;
             cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>
